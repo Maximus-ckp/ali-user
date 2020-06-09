@@ -1,51 +1,47 @@
 // 获取全局 app 实例
 const app = getApp();
-console.log(app)
+console.log(app);
+import parse from 'mini-html-parser2';
 
 Page({
   data: {
     show: false, // 是否显示加载动画
-    navList: [
+    inputValue:'', // 富文本转节点
+    nodes: [
       {
-        name: '我的订单',
-        thumb:
-          'https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*Y8BATYqMN78AAAAAAAAAAABkARQnAQ',
-        onClick: () =>
-          my.navigateTo({
-            url: '/pages/my-order/my-order',
-          }),
-      },
-      {
-        name: '我的券',
-        thumb:
-          'https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*9RqXQaxLeCEAAAAAAAAAAABkARQnAQ',
-        onClick: () =>
-          my.navigateTo({
-            url: '/pages/my-ticket/my-ticket',
-          }),
-      },
-      {
-        name: '关于',
-        thumb:
-          'https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*-Lp1TZDggnoAAAAAAAAAAABkARQnAQ',
-        onClick: () => { },
-      },
-    ],
-    nodes: [{
-      name: 'div',
-      attrs: {
-        class: 'wrapper',
-        style: 'color: orange;',
-      },
-      children: [{
-        type: 'text',
-        text: 'Hello&nbsp;World!',
-      }],
-    }],
+        name: "div",
+        attrs: {
+          class: "wrapper",
+          style: "color: orange;"
+        },
+        children: [
+          {
+            type: "text",
+            text: "Hello&nbsp;World!"
+          }
+        ]
+      }
+    ]
   },
   onLoad(query) {
-    console.log(query)
+    console.log(query);
     this.initData();
+  },
+  bindKeyInput(e) {
+    this.setData({
+      inputValue: e.detail.value
+    });
+  },
+  str2node(){
+    console.log(this.data.inputValue)
+    parse(this.data.inputValue, (err, nodes) => {
+      if (!err) {
+        this.setData({
+          nodes,
+        });
+      }
+    })
+    console.log(this.data.nodes)
   },
   async initData() {
     try {
@@ -54,9 +50,9 @@ Page({
         app.getUserInfo().then(
           user => {
             this.setData({
-              user,
+              user
             });
-            console.log(user)
+            console.log(user);
           },
           () => {
             // 获取用户信息失败
@@ -64,19 +60,21 @@ Page({
         );
       }, 1000);
     } catch (e) {
-      console.log('mySchedulde执行异常:', e);
+      console.log("mySchedulde执行异常:", e);
     }
   },
   onListClick(e) {
-    let { target: { dataset } } = e;
-    console.log(e)
+    let {
+      target: { dataset }
+    } = e;
+    console.log(e);
     // console.log('target:')
     // console.log(target)
-    console.log('dataset:')
-    console.log(dataset)
+    console.log("dataset:");
+    console.log(dataset);
     const { onClick } = this.data.navList[dataset.index];
     if (onClick) {
       onClick();
     }
-  },
+  }
 });
