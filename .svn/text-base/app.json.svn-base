@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/shop/shop"
+  ],
+  "window": {
+    "defaultTitle": "活动平台"
+  },
+  "tabBar": {
+    "textColor": "#333333",
+    "selectedColor": "#009D9A",
+    "backgroundColor": "#f2f2f2",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*WLzeR4T4_oMAAAAAAAAAAABkARQnAQ",
+        "activeIcon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*IRA7QYpBww4AAAAAAAAAAABkARQnAQ",
+        "name": "活动广场"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "icon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*n1f8SYBo_RkAAAAAAAAAAABkARQnAQ",
+        "activeIcon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*q2eOQpQEzDsAAAAAAAAAAABkARQnAQ",
+        "name": "我的"
+      }
+    ]
+  }
+}

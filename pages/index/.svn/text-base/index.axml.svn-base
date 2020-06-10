@@ -1,0 +1,21 @@
+<view class="schedule-container">
+  <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+    <block a:for="{{list}}">
+      <view onTap="goToShop" class="shop-item" data-shopId="{{item.shopName}}">
+        <image class="shop-logo" src="{{item.shopLogo}}"></image>
+        <view class="shop-info">
+          <view class="shop-name">{{item.shopName}}</view>
+          <view class="address">{{item.address}}</view>
+          <view class="business-hour">{{item.businessHour}}</view>
+        </view>
+        <!--<view class="schedule-place">{{item.title}}</view><view class="schedule-trainNumber padd font">{{item.remarksa}}</view><view class="schedule-time padd font">{{item.remarksb}}</view> -->
+      </view>
+    </block>
+    <view class="spinner" style="{{show ? '' : 'display:none'}}">
+      <view class="bounce1 bounce"></view>
+      <view class="bounce2 bounce"></view>
+      <view class="bounce3 bounce"></view>
+      <view style="margin:20rpx 0 0 20rpx;color:#666666;">加载中...</view>
+    </view>
+  </scroll-view>
+</view>
