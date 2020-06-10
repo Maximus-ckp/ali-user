@@ -1,0 +1,25 @@
+.shop-info {
+  width: 702rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  margin: 27rpx auto 0;
+  background: #fff;
+  padding: 48rpx 24rpx;
+}
+
+.shop-name {
+  color: #1F2123;
+  font-size: 36rpx;
+}
+
+.shop-businesshour, .shop-address, .shop-tel {
+  color: #4E5055;
+  font-size: 24rpx;
+  margin-top: 29rpx;
+}
+
+.line-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  transform: translateY(6rpx);
+}

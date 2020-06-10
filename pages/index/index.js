@@ -51,7 +51,13 @@ Page({
   data: {
     show: false, // 是否显示加载动画
     page: 1, // 当前页数
-    list: [] // 页面List数据
+    list: [], // 页面List数据
+    background: ['blue', 'red', 'yellow'],
+    indicatorDots: true,
+    autoplay: false,
+    vertical: false,
+    interval: 1000,
+    circular: false,
   },
   onLoad() {
     this.mySchedulde();

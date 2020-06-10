@@ -1,5 +1,14 @@
 <view class="schedule-container">
+  <image mode="scaleToFill" src="/assets/index-background.png" class="head-bg"/>
   <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+    <shop-info></shop-info>
+    <view class="page-section-demo">
+      <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+        <swiper-item key="swiper-item-{{index}}" a:for="{{background}}">
+          <view class="swiper-item bc_{{item.color}}">{{item.text}}</view>
+        </swiper-item>
+      </swiper>
+    </view>
     <block a:for="{{list}}">
       <view onTap="goToShop" class="shop-item" data-shopId="{{item.shopName}}">
         <image class="shop-logo" src="{{item.shopLogo}}"></image>

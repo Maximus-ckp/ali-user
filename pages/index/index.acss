@@ -113,6 +113,11 @@
   padding: 0rpx 30rpx 20rpx 30rpx;;
 }
 
+.head-bg{
+  width:100%;
+  height:158rpx;
+}
+
 .shop-item{
   display: flex;
   width: 100%;
@@ -127,15 +132,23 @@
   width:220rpx;
   height:220rpx;
 }
-.shop-info{
+/* .shop-info{
   flex:1;
   padding:12rpx;
   background:rgb(240, 211, 211);
+} */
+
+.swiper-item{
+  display: block;
+  height: 150px;
+  margin:0 24rpx;
+  background-color:#e0ffff;
+  border-radius: 0 0 10rpx 10rpx;
 }
-.shop-name{
-  font-weight:bold;
-  font-size:38rpx;
+.margin-t {
+  margin-top: 24px;
 }
+
 .address{
 
 }
