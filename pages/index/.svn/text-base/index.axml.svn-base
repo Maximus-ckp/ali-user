@@ -5,20 +5,21 @@
     <view class="page-section-demo">
       <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
         <swiper-item key="swiper-item-{{index}}" a:for="{{background}}">
-          <view class="swiper-item bc_{{item.color}}">{{item.text}}</view>
+          <view class="swiper-item bc_{{item.color}}">{{item.text}}
+            <image mode="aspectFit" src="{{item.imgUrl}}"></image>
+          </view>
         </swiper-item>
       </swiper>
     </view>
+    <!-- 体验课 -->
+    <view class="channel-title">体验课</view>
+    <block a:for="{{classList}}">
+      <class-card className="{{item.className}}" ageRange="{{item.ageRange}}" coursesNum="{{item.coursesNum}}" studentLimit="{{item.classstudentLimitName}}" imgUrl="{{item.imgUrl}}" oriPrice="{{item.oriPrice}}" promotionPrice="{{item.promotionPrice}}" />
+    </block>
+    <!-- 活动广场 -->
+    <view class="channel-title">活动广场</view>
     <block a:for="{{list}}">
-      <view onTap="goToShop" class="shop-item" data-shopId="{{item.shopName}}">
-        <image class="shop-logo" src="{{item.shopLogo}}"></image>
-        <view class="shop-info">
-          <view class="shop-name">{{item.shopName}}</view>
-          <view class="address">{{item.address}}</view>
-          <view class="business-hour">{{item.businessHour}}</view>
-        </view>
-        <!--<view class="schedule-place">{{item.title}}</view><view class="schedule-trainNumber padd font">{{item.remarksa}}</view><view class="schedule-time padd font">{{item.remarksb}}</view> -->
-      </view>
+      <activity-card activityPoster="{{item.activityPoster}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime}}" activityAddress="{{item.activityAddress}}"></activity-card>
     </block>
     <view class="spinner" style="{{show ? '' : 'display:none'}}">
       <view class="bounce1 bounce"></view>

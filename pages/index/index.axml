@@ -14,13 +14,10 @@
     <!-- 体验课 -->
     <view class="channel-title">体验课</view>
     <block a:for="{{classList}}">
-      <class-card className="{{item.className}}" ageRange="{{item.ageRange}}" coursesNum="{{item.coursesNum}}" studentLimit="{{item.classstudentLimitName}}" imgUrl="{{item.imgUrl}}" oriPrice="{{item.clasoriPriceName}}" promotionPrice="{{item.promotionPrice}}" />
+      <class-card className="{{item.className}}" ageRange="{{item.ageRange}}" coursesNum="{{item.coursesNum}}" studentLimit="{{item.classstudentLimitName}}" imgUrl="{{item.imgUrl}}" oriPrice="{{item.oriPrice}}" promotionPrice="{{item.promotionPrice}}" />
     </block>
     <!-- 活动广场 -->
-    <view class="channel-title">体验课</view>
-    <block a:for="{{classList}}">
-      <class-card className="{{item.className}}" ageRange="{{item.ageRange}}" coursesNum="{{item.coursesNum}}" studentLimit="{{item.classstudentLimitName}}" imgUrl="{{item.imgUrl}}" oriPrice="{{item.clasoriPriceName}}" promotionPrice="{{item.promotionPrice}}" />
-    </block>
+    <view class="channel-title">活动广场</view>
     <block a:for="{{list}}">
       <activity-card activityPoster="{{item.activityPoster}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime}}" activityAddress="{{item.activityAddress}}"></activity-card>
     </block>

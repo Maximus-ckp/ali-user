@@ -1,6 +1,8 @@
 {
   "defaultTitle": "商铺首页",
    "usingComponents": {
-    "shop-info": "./components/ShopInfo/ShopInfo"
+    "shop-info": "./components/ShopInfo/ShopInfo",
+    "activity-card": "./components/ActivityCard/ActivityCard",
+    "class-card": "./components/ClassCard/ClassCard"
   }
 }

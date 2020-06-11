@@ -142,16 +142,16 @@
   display: block;
   height: 150px;
   margin:0 24rpx;
-  background-color:#e0ffff;
+  background-color:rgba(215,222,229,1);
   border-radius: 0 0 10rpx 10rpx;
 }
 .margin-t {
   margin-top: 24px;
 }
 
-.address{
-
-}
-.business-hour{
-
+.channel-title{
+  color:#1F2123;
+  font-weight:bold;
+  font-size:32rpx;
+  margin:27rpx;
 }

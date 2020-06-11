@@ -72,7 +72,7 @@ const shopList = [
 const classList = [
   {
     className:
-      "舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课舞蹈课",
+      "佳佳乐早教幼儿六一练习表演诗歌嘉年华",
     ageRange: "2-4",
     coursesNum: 4,
     studentLimit: 16,
@@ -83,7 +83,7 @@ const classList = [
   },
   {
     className:
-      "拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课拳击课",
+      "佳佳乐早教幼儿六一练习表演诗歌嘉年华",
     ageRange: "3-6",
     coursesNum: 8,
     studentLimit: 16,
@@ -93,7 +93,7 @@ const classList = [
     promotionPrice: 100
   },
   {
-    className: "游泳课程",
+    className: "佳佳乐早教幼儿六一练习表演诗歌嘉年华",
     ageRange: "6-8",
     coursesNum: 4,
     studentLimit: 8,
@@ -106,15 +106,15 @@ const classList = [
 
 const activityList = [
   {
-    activityName: "游泳课程1",
-    activityAddress:'地球',
-    activityTime:'2020-2021',
+    activityName: "佳佳乐早教幼儿六一练习表演诗歌嘉年华",
+    activityAddress:'活动地址：海淀区西直门凯德茂MALL大厦B口一层大厅',
+    activityTime:'活动时间：2020.4.18  15:00 -18:00',
     activityPoster:'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ'
   },
   {
-    activityName: "游泳课程2",
-    activityAddress:'火星',
-    activityTime:'2020-2025',
+    activityName: "佳佳乐早教幼儿六一练习表演诗歌嘉年华",
+    activityAddress:'活动地址：海淀区西直门凯德茂MALL大厦B口一层大厅',
+    activityTime:'活动时间：2020.4.18  15:00 -18:00',
     activityPoster:'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ'
   },
 ];

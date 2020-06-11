@@ -1,4 +1,4 @@
-<view class="class-card">
+<view class="class-card" onTap="goToActivity">
   <view class="class-cover-box">
     <image mode="scaleToFill" class="class-cover" src="{{imgUrl}}"/>
   </view>
@@ -17,10 +17,10 @@
     </view>
     <view class="price-box">
       <view class="promotion-price">
-        体验价:¥{{oriPrice}}
+        体验价:¥{{promotionPrice}}
       </view>
       <view class="ori-price">
-        原价:¥{{promotionPrice}}
+        原价:¥{{oriPrice}}
       </view>
     </view>
   </view>

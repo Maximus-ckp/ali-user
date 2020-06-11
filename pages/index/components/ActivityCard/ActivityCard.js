@@ -14,7 +14,7 @@ Component({
     goToActivity({ target: { dataset } }) {
       let shopId = dataset.shopId;
       my.navigateTo({
-        url: "/pages/shop/shop?shopId=" + shopId
+        url: "/pages/activity-detail/activity-detail?shopId=" + shopId
       });
     }
   }

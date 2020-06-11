@@ -19,5 +19,11 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
+    goToActivity({ target: { dataset } }) {
+      let shopId = dataset.shopId;
+      my.navigateTo({
+        url: "/pages/class-detail/class-detail?shopId=" + shopId
+      });
+    }
   }
 });

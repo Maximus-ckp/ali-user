@@ -29,6 +29,12 @@ Page({
       url: "/pages/shop/shop?shopId=" + shopId
     });
   },
+  goToShop({ target: { dataset } }) {
+    let shopId = dataset.shopId;
+    my.navigateTo({
+      url: "/pages/class-detail/class-detail?shopId=" + shopId
+    });
+  },
   /**
    * scroll-view滑到底部触发事件
    * @method scrollMytrip
