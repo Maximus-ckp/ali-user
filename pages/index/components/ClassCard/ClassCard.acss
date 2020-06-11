@@ -1,0 +1,77 @@
+.class-card {
+  display: flex;
+  width: 702rpx;
+  height: 246rpx;
+  border-radius: 8rpx;
+  background: #fff;
+  padding: 47rpx 24rpx 49rpx;
+  margin: 16rpx auto;
+}
+
+.class-cover-box {
+  width: 200rpx;
+  height: 150rpx;
+  background: #D7DEE5;
+  border-radius: 8rpx;
+}
+
+.class-cover {
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+}
+
+.class-info {
+  float: left;
+  overflow: hidden;
+  padding-left: 32rpx;
+}
+
+.class-name {
+  color: #1F2123;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+}
+
+.class-detail {
+  color: #818A92;
+  font-size: 22rpx;
+  padding-top: 28rpx;
+}
+
+.detail-info {
+  float: left;
+  height: 16rpx;
+  line-height: 16rpx;
+}
+
+.detail-info:not(:first-child) {
+  padding-left: 24rpx;
+  margin-left: 24rpx;
+  border-left: 1rpx solid #959DA3;
+}
+
+.price-box {
+  display: block;
+  width:100%;
+  overflow: hidden;
+  padding-top:50rpx;
+  line-height:22rpx;
+}
+
+.promotion-price {
+  float: left;
+  color: #FF943D;
+  font-size: 22rpx;
+  margin-right: 20rpx;
+}
+
+.ori-price {
+  float: left;
+  color: #818A92;
+  font-size: 18rpx;
+  text-decoration: line-through;
+}

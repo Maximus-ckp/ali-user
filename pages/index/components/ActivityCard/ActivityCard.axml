@@ -1,0 +1,9 @@
+<view onTap="goToActivity" class="activity-item" data-activityId="{{activityId}}">
+  <image class="activity-logo" src="{{activityPoster}}"></image>
+  {{activityPoste}}
+  <view class="activity-info">
+    <view class="activity-name">{{activityName}}</view>
+    <view class="activity-address">{{activityTddress}}</view>
+    <view class="activity-time">{{activityTime}}</view>
+  </view>
+</view>

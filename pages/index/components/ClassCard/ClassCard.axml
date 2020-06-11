@@ -1,0 +1,26 @@
+<view class="class-card">
+  <view class="class-cover-box">
+    <image mode="scaleToFill" class="class-cover" src="{{imgUrl}}"/>
+  </view>
+  <view class="class-info">
+    <view class="class-name">{{className}}</view>
+    <view class="class-detail">
+      <view class="detail-info">
+        {{`${ageRange}岁`}}
+      </view>
+      <view class="detail-info">
+        {{`${coursesNum}节课`}}
+      </view>
+      <view class="detail-info">
+        {{`${studentLimit}人`}}
+      </view>
+    </view>
+    <view class="price-box">
+      <view class="promotion-price">
+        体验价:¥{{oriPrice}}
+      </view>
+      <view class="ori-price">
+        原价:¥{{promotionPrice}}
+      </view>
+    </view>
+  </view>
