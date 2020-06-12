@@ -16,5 +16,6 @@
     >
       {{item.name}}
     </list-item>
+    <view>{{tel}}</view>
   </block>
 </view>

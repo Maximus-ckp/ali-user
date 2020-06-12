@@ -1,48 +1,25 @@
 // 获取全局 app 实例
 const app = getApp();
 console.log(app);
-import parse from 'mini-html-parser2';
 
 Page({
   data: {
-    show: false, // 是否显示加载动画
-    inputValue:'', // 富文本转节点
-    nodes: [
-      {
-        name: "div",
-        attrs: {
-          class: "wrapper",
-          style: "color: orange;"
-        },
-        children: [
-          {
-            type: "text",
-            text: "Hello&nbsp;World!"
-          }
-        ]
-      }
-    ]
+    promotionPrice:'19',
+    oriPrice:'59',
+    className:'优质早教课程实地体验不限定日期体验',
+    validDays:'30天',
+    bannerList:[
+      {imgUrl:"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1564215117,4275586328&fm=15&gp=0.jpg"},
+      {imgUrl:"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1564215117,4275586328&fm=15&gp=0.jpg"},
+      {imgUrl:"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1564215117,4275586328&fm=15&gp=0.jpg"},
+    ],
+    classTags:['0-6岁','4节课','1-6人'],
   },
   onLoad(query) {
     console.log(query);
     this.initData();
   },
-  bindKeyInput(e) {
-    this.setData({
-      inputValue: e.detail.value
-    });
-  },
-  str2node(){
-    console.log(this.data.inputValue)
-    parse(this.data.inputValue, (err, nodes) => {
-      if (!err) {
-        this.setData({
-          nodes,
-        });
-      }
-    })
-    console.log(this.data.nodes)
-  },
+
   async initData() {
     try {
       setTimeout(() => {
@@ -60,21 +37,7 @@ Page({
         );
       }, 1000);
     } catch (e) {
-      console.log("mySchedulde执行异常:", e);
-    }
-  },
-  onListClick(e) {
-    let {
-      target: { dataset }
-    } = e;
-    console.log(e);
-    // console.log('target:')
-    // console.log(target)
-    console.log("dataset:");
-    console.log(dataset);
-    const { onClick } = this.data.navList[dataset.index];
-    if (onClick) {
-      onClick();
+      console.log("执行异常:", e);
     }
   }
 });

@@ -1,25 +1,30 @@
 
-.user {
-  display: flex;
-  flex-shrink: 0;
-  padding: 30px;
-  color: #FFF;
-  flex-direction: column;
-  align-items: center;
+.price-box {
+  display: block;
+  width:100%;
+  overflow: hidden;
+  padding-top:50rpx;
+  line-height:22rpx;
 }
 
-.avatar {
-  width: 130rpx;
-  height: 130rpx;
-  border-radius: 50%;
-  background-color: #FFF;
-  align-self: center;
+.promotion-price {
+  float: left;
+  color: #FF943D;
+  font-size: 22rpx;
+  margin-right: 20rpx;
 }
 
-.nickname {
-  color:#000;
-  padding-top: 40rpx;
-  text-align: center;
-  font-size: 40rpx;
-  font-weight: 100;
+.ori-price {
+  float: left;
+  color: #818A92;
+  font-size: 18rpx;
+  text-decoration: line-through;
+}
+.class-name {
+  color: #1F2123;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
 }

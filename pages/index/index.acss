@@ -132,11 +132,7 @@
   width:220rpx;
   height:220rpx;
 }
-/* .shop-info{
-  flex:1;
-  padding:12rpx;
-  background:rgb(240, 211, 211);
-} */
+
 
 .swiper-item{
   display: block;

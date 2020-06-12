@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/class-detail/class-detail",
     "pages/index/index",
     "pages/my/my",
     "pages/shop/shop",
-    "pages/class-detail/class-detail",
     "pages/activity-detail/activity-detail"
   ],
   "window": {
