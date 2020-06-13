@@ -2,8 +2,9 @@
   width: 702rpx;
   border-radius: 8rpx;
   margin: 16rpx auto 0;
-  background: #D7DEE5;
+  background: #ebebeb;
   overflow:hidden;
+  border:1rpx solid #ebebeb;
 }
 
 .activity-poster{
@@ -14,7 +15,7 @@
 
 .activity-info{
   padding:40rpx 25rpx;
-  background:#EBEBEB;
+  background:#fff;
 }
 
 .activity-name {

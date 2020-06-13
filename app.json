@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/class-detail/class-detail",
     "pages/index/index",
+    "pages/course-detail/course-detail",
+    "pages/course-order/course-order",
     "pages/my/my",
-    "pages/shop/shop",
-    "pages/activity-detail/activity-detail"
+    "pages/activity-detail/activity-detail",
+    "pages/my-activity/my-activity",
+    "pages/my-course/my-course"
   ],
   "window": {
     "defaultTitle": "活动平台",

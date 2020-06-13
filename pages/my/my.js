@@ -1,10 +1,11 @@
+import api from "/api/api.js"
 // 获取全局 app 实例
 const app = getApp();
 console.log(app);
 
 Page({
   data: {
-    baseUrl: "//toker.dmivip.top/",
+    baseUrl: "http://toker.dmivip.top/",
     show: false, // 是否显示加载动画
     tel:'',
     navList: [
@@ -51,8 +52,8 @@ Page({
   },
   onLoad() {
     this.initData();
-    this.getPhone();
-    // this.testRequest();
+    // this.getPhone();
+    this.testRequest();
   },
   getPhone(){
     my.getPhoneNumber({
@@ -70,8 +71,8 @@ Page({
   testRequest() {
     let params = {
       lang:'CN',
-      latitude:'23.5',
-      longitude:'233.8',
+      latitude:0,
+      longitude:0,
       mobileInfo:{
         did:'testdid',
         emulatordid:'emulatordid',
@@ -80,12 +81,13 @@ Page({
         smDid:'testsmDid',
         src:'testsrc'
       },
+      storeId:1,
       ver:'1.0'
     }
-    console.log(this.data.baseUrl + "toker/api/store/2000/v1/getStoreInfo")
+    console.log(api.indexActivityCourseList)
     console.log(JSON.stringify(params))
     my.request({
-      url: this.data.baseUrl + "api/store/2000/v1/getStoreInfo",
+      url: api.getStoreInfo,
       method: "POST",
       data: {...params},
       success: result => {
@@ -119,8 +121,6 @@ Page({
       target: { dataset }
     } = e;
     console.log(e);
-    // console.log('target:')
-    // console.log(target)
     console.log("dataset:");
     console.log(dataset);
     const { onClick } = this.data.navList[dataset.index];

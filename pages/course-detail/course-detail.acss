@@ -1,0 +1,141 @@
+
+
+.class-detail{
+  margin:14rpx 25rpx; 
+  padding:34rpx 24rpx;
+  background:#fff;
+}
+.price-box {
+  display: block;
+  width:100%;
+  overflow: hidden;
+  line-height:32rpx;
+  margin-bottom:26rpx;
+}
+
+.promotion-price {
+  float: left;
+  color: #FF943D;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+}
+
+.ori-price {
+  float: left;
+  color: #818A92;
+  font-size: 18rpx;
+  text-decoration: line-through;
+}
+.class-name {
+  color: #202224;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  margin-bottom:16rpx;
+}
+.class-tags{
+  margin-bottom:70rpx;
+}
+.tag-item{
+  height:28rpx;
+  line-height:28rpx;
+  border-radius:4rpx;
+  padding:0 18rpx;
+  font-size:20rpx;
+  display:inline-block; 
+  margin-right:18rpx;
+}
+
+.tag-item:nth-child(1){
+  background:#D6FCFF;
+  color:#28937E;
+}
+
+.tag-item:nth-child(2){
+  background:#FFEAEB;
+  color:#CF595F;
+}
+
+.tag-item:nth-child(3){
+  background:#FFEBD6;
+  color:#C0854C;
+}
+.effective-time{
+  color:#4E5056;
+  font-size:26rpx;
+}
+
+.banner-swiper{
+  margin-top:22rpx;
+  border-radius: 8rpx;
+  overflow:hidden;
+}
+.swiper-item{
+  display: block;
+  width: 702rpx;
+  height: 280rpx;
+  margin:0 24rpx;
+  background-color:rgba(215,222,229,1);
+  border-radius: 8rpx;
+}
+.swiper-image{
+  width:100%;
+  height:100%;
+  border-radius:8rpx;
+}
+
+.channel-title{
+  color:#202224;
+  font-size:30rpx;
+  border-bottom:1rpx solid #FFEAEB;
+  padding-bottom:24rpx;
+  padding-left:26rpx;
+  font-weight: bold;
+}
+
+.course-intro{
+  margin:14rpx 25rpx; 
+  padding:28rpx 26rpx;
+}
+
+.rich-text{
+  margin:36rpx 26rpx; 
+  color:#4E5056;
+  font-size:28rpx;
+  line-height: 38rpx;
+}
+
+.bottom-bar{
+  height:98rpx;
+  line-height:98rpx;
+  display: flex;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:750rpx;
+}
+
+.bottom-left{
+  flex:1;
+  background:#fff;
+  padding-left:24rpx;
+}
+.order-price{
+  color:#FF943E;
+  font-size:32rpx;
+  display: inline-block;
+  margin-right:8rpx;
+}
+.limit-notice{
+  color:#4E5056;
+  font-size:18rpx;
+  display: inline-block;
+}
+.bottom-right{
+  flex:1;
+  color:#fff;
+  background:#FF943E;
+  text-align:center;
+}

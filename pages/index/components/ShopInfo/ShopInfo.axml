@@ -1,8 +1,7 @@
 <view class="shop-info">
   <view class="shop-name">{{shopName}}</view>
   <view class="info-line shop-businesshour">
-    <image mode="scaleToFill" class="line-icon" src="/assets/icon-shop.png"/>
-  {{businessHour}}
+    <image mode="scaleToFill" class="line-icon" src="/assets/icon-shop.png"/>营业时间 {{businessHour}}
   </view>
   <view class="info-line shop-address">
     <image mode="scaleToFill" class="line-icon" src="/assets/icon-address.png"/>{{shopAddress}}</view>

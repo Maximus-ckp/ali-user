@@ -3,7 +3,8 @@
   {{activityPoste}}
   <view class="activity-info">
     <view class="activity-name">{{activityName}}</view>
-    <view class="activity-address">{{activityAddress}}</view>
-    <view class="activity-time">{{activityTime}}</view>
+    <view class="activity-time">活动时间：{{activityTime}}</view>
+    <view class="activity-address">活动地址：{{activityAddress}}</view>
+
   </view>
 </view>

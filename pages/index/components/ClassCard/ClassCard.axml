@@ -1,18 +1,12 @@
-<view class="class-card" onTap="goToActivity">
+<view class="class-card" data-courseId="{{courseId}}" onTap="goToCourse">
   <view class="class-cover-box">
     <image mode="scaleToFill" class="class-cover" src="{{imgUrl}}"/>
   </view>
   <view class="class-info">
     <view class="class-name">{{className}}</view>
     <view class="class-detail">
-      <view class="detail-info">
-        {{`${ageRange}岁`}}
-      </view>
-      <view class="detail-info">
-        {{`${coursesNum}节课`}}
-      </view>
-      <view class="detail-info">
-        {{`${studentLimit}人`}}
+      <view class="detail-info" a:for="{{labelList}}">
+        {{item.label}}
       </view>
     </view>
     <view class="price-box">

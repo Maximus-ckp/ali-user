@@ -1,25 +1,25 @@
 <view class="schedule-container">
   <image mode="scaleToFill" src="/assets/index-background.png" class="head-bg"/>
   <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
-    <shop-info></shop-info>
-    <view class="page-section-demo">
-      <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
-        <swiper-item key="swiper-item-{{index}}" a:for="{{background}}">
-          <view class="swiper-item bc_{{item.color}}">{{item.text}}
-            <image mode="aspectFit" src="{{item.imgUrl}}"></image>
-          </view>
-        </swiper-item>
-      </swiper>
-    </view>
+    <!-- 店铺信息 -->
+    <shop-info shopName="{{shopName}}" businessHour="{{businessHour}}" shopAddress="{{shopAddress}}" shopTel="{{shopTel}}"></shop-info>
+    <!-- 轮播图 -->
+    <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+      <swiper-item key="swiper-item-{{index}}" a:for="{{swiperList}}">
+        <view class="swiper-item">
+          <image class="swiper-image" mode="scaleToFill" src="{{item.pictureUrl}}"></image>
+        </view>
+      </swiper-item>
+    </swiper>
     <!-- 体验课 -->
     <view class="channel-title">体验课</view>
-    <block a:for="{{classList}}">
-      <class-card className="{{item.className}}" ageRange="{{item.ageRange}}" coursesNum="{{item.coursesNum}}" studentLimit="{{item.classstudentLimitName}}" imgUrl="{{item.imgUrl}}" oriPrice="{{item.oriPrice}}" promotionPrice="{{item.promotionPrice}}" />
+    <block a:for="{{courseList}}">
+      <class-card courseId="{{item.id}} "className="{{item.courseName}}" labelList="{{item.labelList}}" imgUrl="{{item.coverImage}}" oriPrice="{{item.originalPrice}}" promotionPrice="{{item.discountPrice}}" />
     </block>
     <!-- 活动广场 -->
     <view class="channel-title">活动广场</view>
-    <block a:for="{{list}}">
-      <activity-card activityPoster="{{item.activityPoster}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime}}" activityAddress="{{item.activityAddress}}"></activity-card>
+    <block a:for="{{activityList}}">
+      <activity-card activityPoster="{{item.coverImage}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime || '不限'}}" activityAddress="{{item.address}}"></activity-card>
     </block>
     <view class="spinner" style="{{show ? '' : 'display:none'}}">
       <view class="bounce1 bounce"></view>
