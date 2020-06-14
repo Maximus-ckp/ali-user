@@ -1,0 +1,31 @@
+.activity-box {
+  width: 702rpx;
+  border-radius: 8rpx;
+  margin: 16rpx auto 0;
+  background: #ebebeb;
+  overflow:hidden;
+  border:1rpx solid #ebebeb;
+}
+
+.activity-poster{
+  width:702rpx;
+  height:240rpx;
+  display:block;
+}
+
+.activity-info{
+  padding:40rpx 25rpx;
+  background:#fff;
+}
+
+.activity-name {
+  color: #1F2123;
+  font-size: 28rpx;
+  margin-bottom:22rpx;
+}
+
+.activity-time, .activity-address {
+  color: #818A92;
+  font-size: 22rpx;
+  margin-top: 13rpx;
+}

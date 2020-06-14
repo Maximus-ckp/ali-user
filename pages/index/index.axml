@@ -19,7 +19,7 @@
     <!-- 活动广场 -->
     <view class="channel-title">活动广场</view>
     <block a:for="{{activityList}}">
-      <activity-card activityPoster="{{item.coverImage}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime || '不限'}}" activityAddress="{{item.address}}"></activity-card>
+      <activity-card activityId="{{item.id}}" activityPoster="{{item.coverImage}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime || '不限'}}" activityAddress="{{item.address}}" ></activity-card>
     </block>
     <view class="spinner" style="{{show ? '' : 'display:none'}}">
       <view class="bounce1 bounce"></view>

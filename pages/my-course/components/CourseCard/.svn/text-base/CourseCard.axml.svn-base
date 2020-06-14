@@ -1,0 +1,30 @@
+<view class="course-card" data-courseId="{{courseId}}" onTap="goToCourse">
+  <view class="card-top">
+    <view class="order-no">
+            {{orderNo}}
+    </view>
+    <view class="pay-time">
+            {{payTime}}
+    </view>
+    <view class="course-status {{orderStatus===3 ? 'active':''}}">
+            {{statusList[orderStatus]}}
+    </view>
+  </view>
+  <view class="card-middle">
+    <image class="course-cover" mode="scaleToFill" src="{{coverImage}}"/>
+    <view class="course-name">
+            {{courseName}}
+    </view>
+    <view class="course-price">
+      ￥{{discountPrice.toFixed(2)}}
+    </view>
+  </view>
+  <view class="card-bottom">
+    <view class="effective-endtime">
+            有效期至{{effectiveEndTime}}
+    </view>
+    <view class="course-redeemCode">
+            兑换码：{{redeemCode}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<view class="course-card" data-courseId="{{courseId}}" onTap="previewCourse">
+</view>

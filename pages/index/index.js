@@ -24,29 +24,18 @@ Page({
     circular: true
   },
   onLoad() {
-    this.mySchedulde();
     this.initData();
   },
   initData() {
     this.getStoreInfo();
-    this.indexActivityCourseList();
+    this.findCourseList();
+    this.findActivityList();
   },
   // 获取商户信息
   getStoreInfo() {
     let params = {
-      lang: 'CN',
-      latitude: 0,
-      longitude: 0,
-      mobileInfo: {
-        did: 'testdid',
-        emulatordid: 'emulatordid',
-        imei: 'testimei',
-        platform: 'ios',
-        smDid: 'testsmDid',
-        src: 'testsrc'
-      },
-      storeId: 1,
-      ver: '1.0'
+      ...app.api.COMMON_PARAMS,
+      storeId: 1
     }
     my.request({
       url: app.api.getStoreInfo,
@@ -65,41 +54,41 @@ Page({
       }
     });
   },
-  indexActivityCourseList() {
+  findCourseList() {
     let params = {
-      lang: 'CN',
-      latitude: 0,
-      longitude: 0,
-      mobileInfo: {
-        did: 'testdid',
-        emulatordid: 'emulatordid',
-        imei: 'testimei',
-        platform: 'ios',
-        smDid: 'testsmDid',
-        src: 'testsrc'
-      },
+      ...app.api.COMMON_PARAMS,
       storeId: 1,
-      ver: '1.0'
     }
     my.request({
-      url: app.api.indexActivityCourseList,
+      url: app.api.findCourseList,
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
-        console.log("【indexActivityCourseList】请求结果：",data);
+        console.log("【findCourseList】请求结果：",data);
         this.setData({
-          courseList:data.data.courseList,
-          activityList:data.data.activityList,
+          courseList:data.data,
         })
       }
     });
   },
-  // goToShop({ target: { dataset } }) {
-  //   let shopId = dataset.shopId;
-  //   my.navigateTo({
-  //     url: "/pages/shop/shop?shopId=" + shopId
-  //   });
-  // },
+  findActivityList() {
+    let params = {
+      ...app.api.COMMON_PARAMS,
+      storeId: 1,
+    }
+    my.request({
+      url: app.api.findActivityList,
+      method: "POST",
+      data: { ...params },
+      success: ({ data }) => {
+        console.log("【findActivityList】请求结果：",data);
+        this.setData({
+          activityList:data.data,
+        })
+      }
+    });
+  },
+  
   goToCourse({ target: { dataset } }) {
     let courseId = dataset.courseId;
     my.navigateTo({
@@ -141,18 +130,17 @@ Page({
    */
   async mySchedulde(page = 1) {
     try {
-      let list = this.data.list;
+      let list = this.data.activityList;
       // 模拟请求拿到数据进行更新data
       setTimeout(() => {
         let data = this.data.activityList;
-        for (let i = 0; i < data.length; i++) {
+        for (let i = 0; i < 3; i++) {
           // let newObj = { title:'下拉家在', remarksa: `我是第${page}页` };
-          let newObj = { ...data[i], remarksa: `我是第${page}页` };
+          let newObj = { ...data[i] };
           list.push(newObj);
         }
         this.setData({
-          list,
-          page,
+          activityList:list,
           show: false
         });
       }, 1000);

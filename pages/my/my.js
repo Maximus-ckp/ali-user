@@ -5,33 +5,24 @@ console.log(app);
 
 Page({
   data: {
+    user:{},
     baseUrl: "http://toker.dmivip.top/",
     show: false, // 是否显示加载动画
     tel:'',
     navList: [
       {
-        name: "我的订单",
-        thumb:
-          "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*Y8BATYqMN78AAAAAAAAAAABkARQnAQ",
+        name: "我的课程",
         onClick: () =>
           my.navigateTo({
-            url: "/pages/my-order/my-order"
+            url: "/pages/my-course/my-course"
           })
       },
       {
-        name: "我的券",
-        thumb:
-          "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*9RqXQaxLeCEAAAAAAAAAAABkARQnAQ",
+        name: "我的活动",
         onClick: () =>
           my.navigateTo({
-            url: "/pages/my-ticket/my-ticket"
+            url: "/pages/my-activity/my-activity"
           })
-      },
-      {
-        name: "关于",
-        thumb:
-          "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*-Lp1TZDggnoAAAAAAAAAAABkARQnAQ",
-        onClick: () => {}
       }
     ],
     nodes: [

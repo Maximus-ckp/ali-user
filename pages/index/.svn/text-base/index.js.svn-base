@@ -1,38 +1,99 @@
 import mock from "./mock"
-console.log(mock)
+const app = getApp();
 // mock列表数据
 
 // mock列表总数
 const mockTotal = 60;
 Page({
   data: {
-    classList:mock.classList,
-    shopList:mock.shopList,
-    activityList:mock.activityList,
+    shopName: '',
+    businessHour: '',
+    shopAddress: '',
+    shopTel: '',
+    courseList: mock.classList,
+    activityList: mock.activityList,
     show: false, // 是否显示加载动画
     page: 1, // 当前页数
     list: [], // 页面List数据
-    background: ["blue", "red", "yellow"],
     background: mock.background,
+    swiperList:[],
     indicatorDots: true,
-    autoplay: false,
+    autoplay: true,
     vertical: false,
-    interval: 1000,
-    circular: false
+    interval: 3000,
+    circular: true
   },
   onLoad() {
     this.mySchedulde();
+    this.initData();
   },
-  goToShop({ target: { dataset } }) {
-    let shopId = dataset.shopId;
-    my.navigateTo({
-      url: "/pages/shop/shop?shopId=" + shopId
+  initData() {
+    this.getStoreInfo();
+    this.findCourseList();
+    this.findActivityList();
+  },
+  // 获取商户信息
+  getStoreInfo() {
+    let params = {
+      ...app.api.COMMON_PARAMS,
+      storeId: 1
+    }
+    my.request({
+      url: app.api.getStoreInfo,
+      method: "POST",
+      data: { ...params },
+      success: ({ data }) => {
+        console.log("【getStoreInfo】请求结果：",data);
+        let { address, businessTime, name, storeMobile,swiperList } = data.data;
+        this.setData({
+          shopName: name,
+          businessHour: businessTime,
+          shopAddress: address,
+          shopTel: storeMobile,
+          swiperList
+        })
+      }
     });
   },
-  goToShop({ target: { dataset } }) {
-    let shopId = dataset.shopId;
+  findCourseList() {
+    let params = {
+      ...app.api.COMMON_PARAMS,
+      storeId: 1,
+    }
+    my.request({
+      url: app.api.findCourseList,
+      method: "POST",
+      data: { ...params },
+      success: ({ data }) => {
+        console.log("【findCourseList】请求结果：",data);
+        this.setData({
+          courseList:data.data,
+        })
+      }
+    });
+  },
+  findActivityList() {
+    let params = {
+      ...app.api.COMMON_PARAMS,
+      storeId: 1,
+    }
+    my.request({
+      url: app.api.findActivityList,
+      method: "POST",
+      data: { ...params },
+      success: ({ data }) => {
+        console.log("【findActivityList】请求结果：",data);
+        this.setData({
+          activityList:data.data,
+        })
+      }
+    });
+  },
+  
+  goToCourse({ target: { dataset } }) {
+    let courseId = dataset.courseId;
     my.navigateTo({
-      url: "/pages/class-detail/class-detail?shopId=" + shopId
+      url: "/pages/course-detail/course-detail?courseId=" + courseId
     });
   },
   /**
@@ -53,8 +114,6 @@ Page({
     try {
       const { page, list } = this.data;
       // 判断是否还有数据需要加载
-      console.log(list.length);
-      console.log(mockTotal);
       if (list.length < mockTotal) {
         this.setData({ show: true });
         const newPage = page + 1;
@@ -76,12 +135,10 @@ Page({
       // 模拟请求拿到数据进行更新data
       setTimeout(() => {
         let data = this.data.activityList;
-        console.log(data)
         for (let i = 0; i < data.length; i++) {
           // let newObj = { title:'下拉家在', remarksa: `我是第${page}页` };
           let newObj = { ...data[i], remarksa: `我是第${page}页` };
           list.push(newObj);
-          console.log(newObj)
         }
         this.setData({
           list,

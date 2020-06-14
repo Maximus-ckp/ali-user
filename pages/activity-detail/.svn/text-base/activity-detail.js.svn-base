@@ -1,0 +1,77 @@
+import parse from 'mini-html-parser2';
+// 获取全局 app 实例
+const app = getApp();
+console.log(app);
+
+Page({
+  data: {
+    activityId: '',
+    activityName: "",
+    activityTime: '',
+    address: '',
+    coverImage: '',
+    swiperList:[],
+    indicatorDots: true,
+    autoplay: true,
+    vertical: false,
+    interval: 3000,
+    circular: true,
+    nodes: []
+  },
+  onLoad(query) {
+    console.log(query);
+    let { activityId } = query
+    console.log(activityId)
+    this.setData({
+      activityId
+    })
+    this.initData();
+  },
+  async initData() {
+    try {
+      this.getActivityInfo()
+    } catch (e) {
+      console.log("mySchedulde执行异常:", e);
+    }
+  },
+  // 获取活动信息
+  getActivityInfo() {
+    let params = {
+      ...app.api.COMMON_PARAMS,
+      activityId: this.data.activityId,
+    }
+    my.request({
+      url: app.api.getActivityInfo,
+      method: "POST",
+      data: { ...params },
+      success: ({ data }) => {
+        console.log("【getActivityInfo】请求结果：", data);
+        let { activityName, activityTime, address, coverImage,swiperList,detail } = data.data;
+        this.setData({
+          activityName,
+          activityTime,
+          address,
+          coverImage,
+          swiperList,
+          richText:detail
+        })
+        this.str2node(this.data.richText || '');
+      }
+    });
+  },
+  str2node(htmlTxt) {
+    htmlTxt = htmlTxt.replace(/<br>/ig,'aaa');
+    console.log(htmlTxt)
+    
+    parse(htmlTxt, (err, nodes) => {
+      if (!err) {
+        this.setData({
+          nodes,
+        });
+      }
+    })
+  },
+  signup(){
+
+  }
+});

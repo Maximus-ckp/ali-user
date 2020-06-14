@@ -1,29 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
-V 47
-/svn/toker/!svn/ver/5/front/ali-user/pages/shop
-END
-shop.acss
-K 25
-svn:wc:ra_dav:version-url
 V 57
-/svn/toker/!svn/ver/4/front/ali-user/pages/shop/shop.acss
+/svn/toker/!svn/ver/33/front/ali-user/pages/course-detail
 END
-shop.json
+course-detail.axml
 K 25
 svn:wc:ra_dav:version-url
-V 57
-/svn/toker/!svn/ver/5/front/ali-user/pages/shop/shop.json
+V 76
+/svn/toker/!svn/ver/34/front/ali-user/pages/course-detail/course-detail.axml
 END
-shop.js
+course-detail.acss
 K 25
 svn:wc:ra_dav:version-url
-V 55
-/svn/toker/!svn/ver/5/front/ali-user/pages/shop/shop.js
+V 76
+/svn/toker/!svn/ver/33/front/ali-user/pages/course-detail/course-detail.acss
 END
-shop.axml
+course-detail.json
 K 25
 svn:wc:ra_dav:version-url
-V 57
-/svn/toker/!svn/ver/5/front/ali-user/pages/shop/shop.axml
+V 76
+/svn/toker/!svn/ver/33/front/ali-user/pages/course-detail/course-detail.json
+END
+course-detail.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/toker/!svn/ver/34/front/ali-user/pages/course-detail/course-detail.js
 END

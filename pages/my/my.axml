@@ -1,19 +1,9 @@
-<view class="schedule-container">
-  <view class="user">
-    <image class="avatar" src="{{user.avatar || '../../assets/logo.png'}}" background-size="cover"></image>
-    <view class="nickname">{{user.nickName && user.nickName + '\'s' || 'My'}} Todo List</view>
-  </view>
+<view class="my-container">
+  <image mode="scaleToFill" class="my-background" src="/assets/my-background.png"/>
+  <image class="avatar" src="{{user.avatar || '/assets/avatar.png'}}" background-size="cover"></image>
+  <view class="nickname">{{user.nickName || '登录中..'}}</view>
   <block a:for="{{navList}}">
-    <list-item
-      thumb="{{item.thumb}}"
-      className="list-item"
-      arrow="{{true}}"
-      onClick="onListClick"
-      data-index="{{index}}"
-      data-oops="{{index}}"
-      key="items-{{index}}"
-      last="{{index === (items.length - 1)}}"
-    >
+    <list-item thumb="{{item.thumb}}" className="list-item" arrow="{{true}}" onClick="onListClick" data-index="{{index}}" data-oops="{{index}}" key="items-{{index}}" last="{{index === (items.length - 1)}}">
       {{item.name}}
     </list-item>
     <view>{{tel}}</view>

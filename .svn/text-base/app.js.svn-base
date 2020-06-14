@@ -1,4 +1,6 @@
+import api from "/api/api.js"
 App({
+  api,
   onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}

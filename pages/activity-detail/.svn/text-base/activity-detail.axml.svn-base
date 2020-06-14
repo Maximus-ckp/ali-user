@@ -1,0 +1,42 @@
+<view class="activity-box">
+  <!--<image class="activity-poster" src="{{coverImage}}"></image> -->
+  <!-- 轮播图 -->
+  <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+    <swiper-item key="swiper-item-{{index}}" a:for="{{swiperList}}">
+      <view class="swiper-item">
+        <image class="swiper-image" mode="scaleToFill" src="{{item.pictureUrl}}"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="activity-info">
+    <view class="activity-name">{{activityName}}</view>
+    <view class="activity-time">
+      <image mode="scaleToFill" class="line-icon" src="/assets/icon-calendar.png"/>
+    活动时间：{{activityTime || '-'}}
+    </view>
+    <view class="activity-address">
+      <image mode="scaleToFill" class="line-icon" src="/assets/icon-address.png"/>
+    活动地址：{{address}}
+    </view>
+  </view>
+  <!-- 活动详情 富文本 -->
+  <view class="activity-intro">
+    <view class="channel-title">
+    课程详情
+    </view>
+    <rich-text class="rich-text" nodes="{{nodes}}"></rich-text>
+  </view>
+  <!-- 底部按钮条 -->
+  <view class="bottom-bar">
+    <view class="bottom-left">
+        <image mode="scaleToFill" class="share-btn" src="/assets/btn-share.png"/>
+        <view class="share-txt">分享</view>
+    </view>
+    <view class="bottom-right" onTap="signup">
+      <button class="bottom-right-btn">立即报名</button>
+    </view>
+  </view>
+  <!-- <popup show="{{showPopup}}" position="bottom" onClose="onPopupClose">
+    <view class="box bottom">hello world</view>
+  </popup> -->
+</view>
