@@ -1,7 +1,7 @@
 <view class="activity-box">
   <!--<image class="activity-poster" src="{{coverImage}}"></image> -->
   <!-- 轮播图 -->
-  <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+  <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
     <swiper-item key="swiper-item-{{index}}" a:for="{{swiperList}}">
       <view class="swiper-item">
         <image class="swiper-image" mode="scaleToFill" src="{{item.pictureUrl}}"></image>

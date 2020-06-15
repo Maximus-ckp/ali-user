@@ -1,3 +1,4 @@
+import swiperConfig from "/config/swiper-config"
 import parse from 'mini-html-parser2';
 // 获取全局 app 实例
 const app = getApp();
@@ -18,11 +19,7 @@ Page({
     effectiveTime: '',
     orderStatus:0, //3 为已购买
 
-    indicatorDots: true,
-    autoplay: true,
-    vertical: false,
-    interval: 3000,
-    circular: true,
+    ...swiperConfig,
 
     inputValue: '',
     nodes: []

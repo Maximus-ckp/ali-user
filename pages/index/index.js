@@ -1,4 +1,5 @@
 import mock from "./mock"
+import swiperConfig from "/config/swiper-config"
 const app = getApp();
 // mock列表数据
 
@@ -15,13 +16,8 @@ Page({
     show: false, // 是否显示加载动画
     page: 1, // 当前页数
     list: [], // 页面List数据
-    background: mock.background,
     swiperList:[],
-    indicatorDots: true,
-    autoplay: true,
-    vertical: false,
-    interval: 3000,
-    circular: true
+    ...swiperConfig
   },
   onLoad() {
     this.initData();

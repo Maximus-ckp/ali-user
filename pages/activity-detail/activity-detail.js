@@ -1,3 +1,4 @@
+import swiperConfig from "/config/swiper-config"
 import parse from "mini-html-parser2";
 // 获取全局 app 实例
 const app = getApp();
@@ -11,11 +12,7 @@ Page({
     address: "",
     coverImage: "",
     swiperList: [],
-    indicatorDots: true,
-    autoplay: true,
-    vertical: false,
-    interval: 3000,
-    circular: true,
+    ...swiperConfig,
     nodes: [],
     tel: "",
     bbAge: "",
