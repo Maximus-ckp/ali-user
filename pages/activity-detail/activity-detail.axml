@@ -22,10 +22,13 @@
   <!-- 活动详情 富文本 -->
   <view class="activity-intro">
     <view class="channel-title">
+  <!-- <image mode="scaleToFill" src="{{img}}"/> -->
     课程详情
     </view>
     <rich-text class="rich-text" nodes="{{nodes}}"></rich-text>
   </view>
+    <!-- <canvas id="canvas" width="610" height="610" class="canvas"/> -->
+
   <!-- 底部按钮条 -->
   <view class="bottom-bar">
     <view class="bottom-left" onTap="share">

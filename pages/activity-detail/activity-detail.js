@@ -1,15 +1,15 @@
-import parse from 'mini-html-parser2';
+import parse from "mini-html-parser2";
 // 获取全局 app 实例
 const app = getApp();
 console.log(app);
 
 Page({
   data: {
-    activityId: '',
+    activityId: "",
     activityName: "",
-    activityTime: '',
-    address: '',
-    coverImage: '',
+    activityTime: "",
+    address: "",
+    coverImage: "",
     swiperList: [],
     indicatorDots: true,
     autoplay: true,
@@ -17,22 +17,31 @@ Page({
     interval: 3000,
     circular: true,
     nodes: [],
-    tel: '',
-    bbAge: '',
-    bbName: ''
+    tel: "",
+    bbAge: "",
+    bbName: "",
+
+    area: {
+      x: 100,
+      y: 100,
+      w: 100,
+      h: 100
+    },
+    img: "",
+    url: ""
   },
   onLoad(query) {
     console.log(query);
-    let { activityId } = query
-    console.log(activityId)
+    let { activityId } = query;
+    console.log(activityId);
     this.setData({
       activityId
-    })
+    });
     this.initData();
   },
   async initData() {
     try {
-      this.getActivityInfo()
+      this.getActivityInfo();
     } catch (e) {
       console.log("mySchedulde执行异常:", e);
     }
@@ -43,15 +52,22 @@ Page({
       ...app.api.COMMON_PARAMS,
       // TODO
       // activityId: this.data.activityId,
-      activityId: 1,
-    }
+      activityId: 1
+    };
     my.request({
       url: app.api.getActivityInfo,
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
         console.log("【getActivityInfo】请求结果：", data);
-        let { activityName, activityTime, address, coverImage, swiperList, detail } = data.data;
+        let {
+          activityName,
+          activityTime,
+          address,
+          coverImage,
+          swiperList,
+          detail
+        } = data.data;
         this.setData({
           activityName,
           activityTime,
@@ -59,42 +75,53 @@ Page({
           coverImage,
           swiperList,
           richText: detail
-        })
-        this.str2node(this.data.richText || '');
+        });
+        this.str2node(this.data.richText || "");
       }
     });
   },
   str2node(htmlTxt) {
-    htmlTxt = htmlTxt.replace(/<br>/ig, 'aaa');
-    console.log(htmlTxt)
+    htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
+    console.log(htmlTxt);
 
     parse(htmlTxt, (err, nodes) => {
       if (!err) {
         this.setData({
-          nodes,
+          nodes
         });
       }
-    })
+    });
   },
   signup() {
     this.setData({
       showPopup: true
-    })
+    });
     // this.data.showPopup = true;
   },
   share() {
     my.showSharePanel();
+    // let { url } = this.data;
+    // my.saveImage({
+    //   // url: "http://caibaojian.com/d/uploads/2014/08/20110820223646_656.jpg",
+    //   url,
+    //   showActionSheet: true,
+    //   success: () => {
+    //     my.alert({
+    //       title: "保存成功"
+    //     });
+    //   }
+    // });
   },
   onShareAppMessage() {
     return {
-      title: '分享 View 组件',
-      desc: 'View 组件很通用',
+      title: "分享 View 组件",
+      desc: "View 组件很通用"
       // path: 'page/component/view/view',
     };
   },
   onPopupClose() {
     this.setData({
-      showPopup: false,
+      showPopup: false
     });
   },
   onInputTel(e) {
@@ -114,13 +141,13 @@ Page({
   },
 
   async checkForm() {
-    let result = { validated: true, msg: 'chenggong' };
-    if (!this.data.tel || !(/^\d{11}$/).test(this.data.tel)) {
+    let result = { validated: true, msg: "chenggong" };
+    if (!this.data.tel || !/^\d{11}$/.test(this.data.tel)) {
       result.validated = false;
       result.msg = "请正确填写您的手机号";
       return result;
     }
-    if (!this.data.bbAge || !(/^\d{1,2}$/).test(this.data.bbAge)) {
+    if (!this.data.bbAge || !/^\d{1,2}$/.test(this.data.bbAge)) {
       result.validated = false;
       result.msg = "请正确填写宝宝年龄";
       return result;
@@ -133,26 +160,24 @@ Page({
     return result;
   },
   submit() {
-    this.checkForm()
-      .then(res => {
-        if (!res.validated) {
-          my.alert({
-            title: '提示',
-            content: res.msg,
-            buttonText: '好的',
-          });
-          return false;
-        }
-        this.saveActivitySign();
-      });
-
-
+    // console.log(
+    //   this.startClip().then(url => {
+    //     console.log(url);
+    //     this.setData({ url });
+    //   })
+    // );
+    this.checkForm().then(res => {
+      if (!res.validated) {
+        my.alert({
+          title: "提示",
+          content: res.msg,
+          buttonText: "好的"
+        });
+        return false;
+      }
+      this.saveActivitySign();
+    });
   },
-  // "activityId": "string",
-  // "babyAge": "string",
-  // "babyName": "string",
-  // "userMobile": "string",
-  // "userName": "string",
   saveActivitySign() {
     let params = {
       ...app.api.COMMON_PARAMS,
@@ -161,26 +186,48 @@ Page({
       babyAge: this.data.bbAge,
       babyName: this.data.babyName,
       userMobile: this.data.tel,
-      userName: 'ckp'
-    }
+      userName: "ckp"
+    };
     my.request({
       url: app.api.saveActivitySign,
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
-        console.log('saveActivitySign')
-        console.log(data)
+        console.log("saveActivitySign");
+        console.log(data);
         my.alert({
-          title: '提示',
-          content: '报名成功！',
-          buttonText: '好的',
+          title: "提示",
+          content: "报名成功！",
+          buttonText: "好的",
           success: () => {
             this.setData({
-              showPopup: false,
+              showPopup: false
             });
           }
         });
       }
     });
+  },
+  startClip() {
+    let canvasCtx = my.createCanvasContext("canvas");
+    canvasCtx.fillRect(20, 20, 250, 80);
+    canvasCtx.setFillStyle("blue");
+    canvasCtx.draw();
+    console.log(canvasCtx);
+    let data = canvasCtx.getImageData({
+      x: 0,
+      y: 0,
+      width: 100,
+      height: 600,
+      success(res) {
+        console.log(res.width); // 100
+        console.log(res.height); // 100
+        console.log(res.data instanceof Uint8ClampedArray); // true
+        console.log(res.data.length); // 100 * 100 * 4
+      }
+    });
+    // console.log(data);
+    // canvasCtx.putImageData(data, 0, 0);
+    return canvasCtx.toDataURL("image/png");
   }
 });

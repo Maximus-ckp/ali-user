@@ -205,3 +205,13 @@ text-align: center;
 color:#fff;
 font-size:32rpx;
 }
+
+#canvas{
+  border:2rpx solid red;
+  width:80vw;
+  height:80vh;
+  position:fixed;
+  top:10vh;
+  left:10vw;
+  z-index: 1000;
+}
