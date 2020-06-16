@@ -1,10 +1,16 @@
-import api from "/api/api.js"
+import api from "/api/api.js";
 App({
   api,
+  userInfo:{
+    avatar:'',
+    nickName:'',
+    tel:''
+  },
   onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}
-    console.info('App onLaunch');
+    console.info("App onLaunch");
+    
   },
   onShow(options) {
     // 从后台被 scheme 重新打开
@@ -15,7 +21,7 @@ App({
       if (this.userInfo) resolve(this.userInfo);
 
       my.getAuthCode({
-        scopes: ['auth_user'],
+        scopes: ["auth_user"],
         success: authcode => {
           console.info(authcode);
 
@@ -26,13 +32,13 @@ App({
             },
             fail: () => {
               reject({});
-            },
+            }
           });
         },
         fail: () => {
           reject({});
-        },
+        }
       });
     });
-  },
+  }
 });

@@ -1,0 +1,48 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 15, 15, .6);
+  z-index: 1000;
+}
+
+#canvas {
+  border: 2rpx solid green;
+  position: fixed;
+  width: 556rpx;
+  height: 850rpx;
+  top: 6vh;
+  left: 13vw;
+  z-index: 1000;
+  background: #fff;
+}
+
+.close{
+  width: 64rpx;
+  height: 64rpx;
+   position:fixed;
+  right:64rpx;
+  top:3.3vh;
+  z-index: 1001;
+}
+
+.download {
+  font-size: 28rpx;
+  color: #fff;
+  width: 320rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: rgba(255, 148, 61, 1);
+  border-radius: 40rpx;
+  position:fixed;
+  left:217rpx;
+  top:985rpx;
+  transition:all .3s;
+}
+.download.disabled{
+  background:#C4CACE;
+  pointer-events: none;
+}

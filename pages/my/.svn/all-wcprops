@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 46
-/svn/toker/!svn/ver/30/front/ali-user/pages/my
+/svn/toker/!svn/ver/33/front/ali-user/pages/my
 END
 my.js
 K 25
 svn:wc:ra_dav:version-url
 V 52
-/svn/toker/!svn/ver/30/front/ali-user/pages/my/my.js
+/svn/toker/!svn/ver/42/front/ali-user/pages/my/my.js
 END
 my.axml
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/svn/toker/!svn/ver/33/front/ali-user/pages/my/my.axml
+/svn/toker/!svn/ver/40/front/ali-user/pages/my/my.axml
 END
 my.acss
 K 25
@@ -24,6 +24,6 @@ END
 my.json
 K 25
 svn:wc:ra_dav:version-url
-V 53
-/svn/toker/!svn/ver/4/front/ali-user/pages/my/my.json
+V 54
+/svn/toker/!svn/ver/40/front/ali-user/pages/my/my.json
 END

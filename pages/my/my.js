@@ -5,6 +5,7 @@ console.log(app);
 
 Page({
   data: {
+    user: {},
     avatar: app.userInfo.avatar,
     nickName: app.userInfo.nickName,
     baseUrl: "http://toker.dmivip.top/",
@@ -89,24 +90,30 @@ Page({
   },
   async initData() {
     try {
-      setTimeout(() => {
-        // 获取用户信息并存储数据
-        // this.getUserInfo();
-      }, 60);
+      this.getUserInfo();
+      let timer = setTimeout(() => {
+        if (!this.data.avatar) {
+          this.initData();
+        } else {
+          clearTimeout(timer)
+        }
+      }, 200);
     } catch (e) {
       console.log("mySchedulde执行异常:", e);
     }
   },
-  getUserInfo() {
-    app.testGlobal=15
-    console.log(app.testGlobal)
-    app.getUserInfo().then(
+  async getUserInfo() {
+    await app.getUserInfo().then(
       user => {
-        // this.setData({
-        //   user
-        // });
-        // console.log(user);
-        let {avatar,nickName} = user;
+        this.setData({
+          user
+        });
+        let { avatar, nickName } = user;
+        console.log(avatar, nickName)
+        this.setData({
+          avatar,
+          nickName
+        });
         app.userInfo.avatar = avatar;
         app.userInfo.nickName = nickName;
       },

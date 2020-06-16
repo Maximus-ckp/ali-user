@@ -2,9 +2,9 @@ import api from "/api/api.js";
 App({
   api,
   userInfo:{
-    avatar:'testAvatar',
-    nickName:'CKP',
-    tel:'1326'
+    avatar:'',
+    nickName:'',
+    tel:''
   },
   onLaunch(options) {
     // 第一次打开

@@ -4,7 +4,7 @@
   margin: 16rpx auto 0;
   background: #ebebeb;
   overflow:hidden;
-  border:1rpx solid #ebebeb;
+  border:1rpx solid #f5f5f5;
 }
 
 .activity-poster{

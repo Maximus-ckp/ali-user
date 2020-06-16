@@ -39,6 +39,9 @@
       <button class="bottom-right-btn">立即报名</button>
     </view>
   </view>
+  
+  
+
   <popup show="{{showPopup}}" position="bottom" onClose="onPopupClose">
     <view class="popup-box">
       <view class="form-notice">
@@ -53,3 +56,4 @@
     </view>
   </popup>
 </view>
+<share-poster timeStamp="{{Date.now()}}" showSharePoster="{{showSharePoster}}" coverUrl="{{posterUrl}}" closePoster="closeSharePoster"></share-poster>

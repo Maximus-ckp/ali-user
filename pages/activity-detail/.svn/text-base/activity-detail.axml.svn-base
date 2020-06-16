@@ -1,7 +1,7 @@
 <view class="activity-box">
   <!--<image class="activity-poster" src="{{coverImage}}"></image> -->
   <!-- 轮播图 -->
-  <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+  <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
     <swiper-item key="swiper-item-{{index}}" a:for="{{swiperList}}">
       <view class="swiper-item">
         <image class="swiper-image" mode="scaleToFill" src="{{item.pictureUrl}}"></image>
@@ -12,31 +12,48 @@
     <view class="activity-name">{{activityName}}</view>
     <view class="activity-time">
       <image mode="scaleToFill" class="line-icon" src="/assets/icon-calendar.png"/>
-    活动时间：{{activityTime || '-'}}
+    活动时间：{{activityTime || '暂无数据'}}
     </view>
     <view class="activity-address">
       <image mode="scaleToFill" class="line-icon" src="/assets/icon-address.png"/>
-    活动地址：{{address}}
+    活动地址：{{address || '暂无数据'}}
     </view>
   </view>
   <!-- 活动详情 富文本 -->
   <view class="activity-intro">
     <view class="channel-title">
-    课程详情
+  <!-- <image mode="scaleToFill" src="{{img}}"/> -->
+    活动详情
     </view>
     <rich-text class="rich-text" nodes="{{nodes}}"></rich-text>
   </view>
+    <!-- <canvas id="canvas" width="610" height="610" class="canvas"/> -->
+
   <!-- 底部按钮条 -->
   <view class="bottom-bar">
-    <view class="bottom-left">
-        <image mode="scaleToFill" class="share-btn" src="/assets/btn-share.png"/>
-        <view class="share-txt">分享</view>
+    <view class="bottom-left" onTap="share">
+      <image mode="scaleToFill" class="share-btn" src="/assets/btn-share.png"/>
+      <view class="share-txt">分享</view>
     </view>
     <view class="bottom-right" onTap="signup">
       <button class="bottom-right-btn">立即报名</button>
     </view>
   </view>
-  <!-- <popup show="{{showPopup}}" position="bottom" onClose="onPopupClose">
-    <view class="box bottom">hello world</view>
-  </popup> -->
+  
+  
+
+  <popup show="{{showPopup}}" position="bottom" onClose="onPopupClose">
+    <view class="popup-box">
+      <view class="form-notice">
+      请填入正确信息以便联系到您~
+      </view>
+      <image mode="scaleToFill" class="btn-close" onTap="onPopupClose" src="/assets/btn-close.png"/>
+      
+      <input placeholder="请输入您的手机号" type="text" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
+      <input placeholder="请输入宝宝年龄" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
+      <input placeholder="请输入宝宝姓名" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel"/>
+      <button class="submit-btn" onTap="submit">确定报名</button>
+    </view>
+  </popup>
 </view>
+<share-poster timeStamp="{{Date.now()}}" showSharePoster="{{showSharePoster}}" coverUrl="{{posterUrl}}" closePoster="closeSharePoster"></share-poster>

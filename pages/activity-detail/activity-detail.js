@@ -6,6 +6,7 @@ console.log(app);
 
 Page({
   data: {
+    posterUrl: "",
     activityId: "",
     activityName: "",
     activityTime: "",
@@ -17,6 +18,8 @@ Page({
     tel: "",
     bbAge: "",
     bbName: "",
+
+    showSharePoster: false,
 
     area: {
       x: 100,
@@ -70,6 +73,7 @@ Page({
           activityTime,
           address,
           coverImage,
+          posterUrl: coverImage,
           swiperList,
           richText: detail
         });
@@ -96,7 +100,8 @@ Page({
     // this.data.showPopup = true;
   },
   share() {
-    my.showSharePanel();
+    // my.showSharePanel();
+    this.showSharePanel();
     // let { url } = this.data;
     // my.saveImage({
     //   // url: "http://caibaojian.com/d/uploads/2014/08/20110820223646_656.jpg",
@@ -108,6 +113,9 @@ Page({
     //     });
     //   }
     // });
+  },
+  showSharePanel() {
+    this.setData({ showSharePoster: true })
   },
   onShareAppMessage() {
     return {
@@ -226,5 +234,24 @@ Page({
     // console.log(data);
     // canvasCtx.putImageData(data, 0, 0);
     return canvasCtx.toDataURL("image/png");
+  },
+  closeSharePoster() {
+    this.setData({ showSharePoster: false })
+  },
+  downloadPoster(posterUrl) {
+    my.saveImage({
+      url: posterUrl,
+      showActionSheet: true,
+      success: () => {
+        my.alert({
+          title: "保存成功",
+          success: () => {
+            this.setData({ showSharePoster: false });
+          }
+        });
+
+
+      }
+    });
   }
 });

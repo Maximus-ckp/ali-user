@@ -1,7 +1,7 @@
 10
 
 dir
-34
+39
 http://cuikunpeng@182.92.99.177:3690/svn/toker/front/ali-user/pages/my-activity/components/ActivityCard
 http://cuikunpeng@182.92.99.177:3690/svn/toker
 
@@ -62,14 +62,14 @@ cuikunpeng
 
 ActivityCard.axml
 file
+40
 
 
 
-
-2020-06-14T14:41:29.000000Z
-921886cb06ca9526f73c40e22cf0c435
-2020-06-14T15:55:02.081784Z
-34
+2020-06-16T15:09:47.000000Z
+d34c5166017fc7bb8eedd9a6b92b5f77
+2020-06-16T15:11:11.503669Z
+40
 cuikunpeng
 
 
@@ -92,7 +92,7 @@ cuikunpeng
 
 
 
-430
+471
 
 ActivityCard.json
 file
@@ -130,14 +130,14 @@ cuikunpeng
 
 ActivityCard.acss
 file
+40
 
 
 
-
-2020-06-14T14:50:01.000000Z
-6e414c2fafbe3367d133f7544dbc6acd
-2020-06-14T15:55:02.081784Z
-34
+2020-06-16T15:09:47.000000Z
+3be185376f9e19ede3c450d6df72e276
+2020-06-16T15:11:11.503669Z
+40
 cuikunpeng
 
 
@@ -160,5 +160,5 @@ cuikunpeng
 
 
 
-803
+836
 

@@ -1,5 +1,7 @@
 {
+  "titleBarColor":"#FF943D",
   "defaultTitle": "商铺首页",
+  "backgroundColor":"f8f8f8",
   "usingComponents": {
     "shop-info": "./components/ShopInfo/ShopInfo",
     "activity-card": "./components/ActivityCard/ActivityCard",

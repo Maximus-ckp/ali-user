@@ -4,3 +4,11 @@ page {
 view{
   box-sizing: border-box;
 }
+rich-text{
+  min-height:20vh;
+  background:#fff;
+}
+.inline{
+  display: inline;
+
+}

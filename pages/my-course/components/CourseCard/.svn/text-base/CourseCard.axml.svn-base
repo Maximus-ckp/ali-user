@@ -1,10 +1,10 @@
 <view class="course-card" data-courseId="{{courseId}}" onTap="goToCourse">
   <view class="card-top">
     <view class="order-no">
-            {{orderNo}}
+            订单编号: {{orderNo}}
     </view>
     <view class="pay-time">
-            {{payTime}}
+            支付时间: {{payTime}}
     </view>
     <view class="course-status {{orderStatus===3 ? 'active':''}}">
             {{statusList[orderStatus]}}

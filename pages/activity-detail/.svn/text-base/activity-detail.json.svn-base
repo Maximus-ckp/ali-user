@@ -2,7 +2,10 @@
   "defaultTitle": "活动详情",
   "backgroundColor": "#ffffff",
   "usingComponents": {
+    "popup": "mini-ali-ui/es/popup/index",
     "list": "mini-antui/es/list/index",
-    "list-item": "mini-antui/es/list/list-item/index"
+    "list-item": "mini-antui/es/list/list-item/index",
+    "input-item": "mini-ali-ui/es/input-item/index",
+    "share-poster":"./components/SharePoster/SharePoster"
   }
 }

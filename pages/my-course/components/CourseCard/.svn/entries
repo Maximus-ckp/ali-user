@@ -1,7 +1,7 @@
 10
 
 dir
-34
+39
 http://cuikunpeng@182.92.99.177:3690/svn/toker/front/ali-user/pages/my-course/components/CourseCard
 http://cuikunpeng@182.92.99.177:3690/svn/toker
 
@@ -62,14 +62,14 @@ cuikunpeng
 
 CourseCard.acss
 file
+40
 
 
 
-
-2020-06-14T12:35:02.000000Z
-d1d29e793f20a6d1f3d702f2df373f76
-2020-06-14T15:55:02.081784Z
-34
+2020-06-16T15:09:47.000000Z
+927912f8da97123229bd8dc83a73ec13
+2020-06-16T15:11:11.503669Z
+40
 cuikunpeng
 
 
@@ -92,7 +92,7 @@ cuikunpeng
 
 
 
-1187
+1172
 
 CourseCard.js
 file
@@ -130,14 +130,14 @@ cuikunpeng
 
 CourseCard.axml
 file
+40
 
 
 
-
-2020-06-14T15:38:49.000000Z
-b191b9416a50a03cdcbcb302c5615e54
-2020-06-14T15:55:02.081784Z
-34
+2020-06-16T15:09:47.000000Z
+06f5c92ae2629061a2165fe468700602
+2020-06-16T15:11:11.503669Z
+40
 cuikunpeng
 
 
@@ -160,5 +160,5 @@ cuikunpeng
 
 
 
-852
+880
 

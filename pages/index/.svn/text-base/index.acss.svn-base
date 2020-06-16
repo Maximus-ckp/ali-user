@@ -1,6 +1,6 @@
 .schedule-container{
    width: 100vw;
-  height: 100vh;
+    height: 100vh;
     overflow: hidden;
 }
 .schedule-scroll {
@@ -140,7 +140,8 @@
   height: 280rpx;
   margin:0 24rpx;
   background-color:rgba(215,222,229,1);
-  border-radius: 0 0 10rpx 10rpx;
+  border-radius: 0 0 8rpx 8rpx;
+  overflow: hidden;
 }
 .swiper-image{
   width:100%;

@@ -1,12 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-
     "pages/activity-detail/activity-detail",
-
-
     "pages/my-course/my-course",
-
     "pages/my-activity/my-activity",
     "pages/course-detail/course-detail",
     "pages/course-order/course-order",

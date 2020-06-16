@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/toker/!svn/ver/33/front/ali-user/pages/index/components/ClassCard
+/svn/toker/!svn/ver/34/front/ali-user/pages/index/components/ClassCard
 END
 ClassCard.axml
 K 25
@@ -13,7 +13,7 @@ ClassCard.acss
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svn/toker/!svn/ver/33/front/ali-user/pages/index/components/ClassCard/ClassCard.acss
+/svn/toker/!svn/ver/40/front/ali-user/pages/index/components/ClassCard/ClassCard.acss
 END
 ClassCard.json
 K 25

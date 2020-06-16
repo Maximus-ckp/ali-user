@@ -1,8 +1,7 @@
 .order-container {
-  padding: 48rpx;
+  padding: 24rpx;
   width: 750rpx;
   height: 100vh;
-  background: #fff;
 }
 
 .course-main-box {
@@ -14,7 +13,13 @@
   width: 220rpx;
   height: 150rpx;
   border-radius: 8rpx;
-  margin: 0 32rpx 70rpx 0;
+  margin: 0 32rpx 0rpx 0;
+}
+
+.course-main-box, .am-list-item {
+  background: #fff;
+   padding:24rpx;
+   margin-bottom:12rpx;
 }
 
 .course-name {
@@ -22,8 +27,8 @@
 }
 
 .am-list-item {
-  padding-left: 0;
-  margin-bottom: 14rpx;
+  padding:0 24rpx;
+  border-radius:8rpx;
 }
 
 .am-list-content {
