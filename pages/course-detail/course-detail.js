@@ -15,7 +15,7 @@ Page({
       // { imgUrl: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1564215117,4275586328&fm=15&gp=0.jpg" },
       // { imgUrl: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1564215117,4275586328&fm=15&gp=0.jpg" },
     ],
-    courseTags: [],
+    labelList: [],
     effectiveTime: '',
     orderStatus:0, //3 为已购买
 
@@ -49,13 +49,14 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【getCourseInfo】请求结果：", data);
-        let { courseName, discountPrice, originalPrice, swiperList, effectiveTime,orderStatus } = data.data;
+        let { courseName, discountPrice, originalPrice, swiperList, effectiveTime,orderStatus,labelList } = data.data;
         this.setData({
           courseName,
           swiperList,
           oriPrice: originalPrice,
           promotionPrice: discountPrice, effectiveTime,
-          orderStatus
+          orderStatus,
+          labelList
         })
       }
     });

@@ -5,6 +5,7 @@ http://182.92.99.177:7979/swagger-ui.html#/
 https://lanhuapp.com/web/#/item/project/board?type=share_mark&pid=8b58cba8-e444-454f-86e6-6929432a254f&activeSectionId=&teamId=cf38a533-a7df-4a5e-8a9f-e1413b405dab&param=e3d1ca51-439b-4f03-8ee9-215169439639
 商家PC蓝湖
 https://lanhuapp.com/web/#/item/project/board?fid=all&commonly=all&tid=cf38a533-a7df-4a5e-8a9f-e1413b405dab&project_id=775c4922-c005-486d-a56c-58a11fc651ef&image_id=f5f7e872-8b34-4f4b-9579-d53af5828245&from=nav
+https://lanhuapp.com/url/9YoXk-lIDhX
 */
 const BASE_URL = "http://toker.dmivip.top/";
 
