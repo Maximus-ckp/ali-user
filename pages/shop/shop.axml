@@ -4,9 +4,9 @@
     <view class="nickname">{{user.nickName && user.nickName + '\'s' || 'My'}} Todo List</view>
   </view>
   <view>
-    <textarea onBlur="bindTextAreaBlur" auto-height placeholder="Please input something"  onInput="bindKeyInput" />
+    <!-- <textarea onBlur="bindTextAreaBlur" auto-height placeholder="Please input something"  onInput="bindKeyInput" />
     <rich-text nodes="{{nodes}}"></rich-text>
     {{inputValue}}
-    <button type="primary" onTap="str2node">input转化为node</button>
+    <button type="primary" onTap="str2node">input转化为node</button> -->
   </view>
 </view>

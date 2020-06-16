@@ -6,7 +6,7 @@ https://lanhuapp.com/web/#/item/project/board?type=share_mark&pid=8b58cba8-e444-
 商家PC蓝湖
 https://lanhuapp.com/web/#/item/project/board?fid=all&commonly=all&tid=cf38a533-a7df-4a5e-8a9f-e1413b405dab&project_id=775c4922-c005-486d-a56c-58a11fc651ef&image_id=f5f7e872-8b34-4f4b-9579-d53af5828245&from=nav
 */
-const BASE_URL = "http://toker.dmivip.top/";
+const BASE_URL = "https://toker.dmivip.top/";
 
 // 1000 小程序应用注册接口
 let registerApplication = BASE_URL + "/api/application/security/1000/v1/registerApplication"
