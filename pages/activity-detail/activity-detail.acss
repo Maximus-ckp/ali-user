@@ -1,10 +1,17 @@
 .activity-box {
-  width: 702rpx;
+  width: 750rpx;
+  min-height: 100vh;
   border-radius: 8rpx;
   margin: 16rpx auto 0;
-  background: #ebebeb;
   overflow: hidden;
+  padding-bottom: 110rpx;
   margin-bottom: 116rpx;
+}
+
+swiper {
+  background-color: #fff;
+  margin: 24rpx auto 0;
+  width: 702rpx;
 }
 
 .swiper-item {
@@ -34,8 +41,10 @@
 }
 
 .activity-info {
-  padding: 40rpx 25rpx;
+  padding: 26rpx 25rpx;
   background: #fff;
+  margin-bottom: 17rpx;
+  border-radius: 8rpx;
 }
 
 .activity-name {
@@ -55,7 +64,7 @@
 .channel-title {
   color: #202224;
   font-size: 30rpx;
-  border-bottom: 1rpx solid #FFEAEB;
+  border-bottom: 1rpx solid #f5f5f5;
   padding-bottom: 24rpx;
   font-weight: bold;
 }
@@ -184,7 +193,7 @@ input {
   background: rgba(248, 248, 248, 1);
   border-radius: 8rpx 10rpx 10rpx 10rpx;
   color: #FF943E;
-  padding:0 22rpx;
+  padding: 0 22rpx;
 }
 
 .btn-close {
@@ -195,23 +204,23 @@ input {
   right: 34rpx;
 }
 
-.submit-btn{
-  width:654rpx;
-height:80rpx;
-line-height:80rpx;
-background:rgba(255,148,62,1);
-border-radius:40rpx;
-text-align: center;
-color:#fff;
-font-size:32rpx;
+.submit-btn {
+  width: 654rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: rgba(255, 148, 62, 1);
+  border-radius: 40rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
 }
 
-#canvas{
-  border:2rpx solid red;
-  width:80vw;
-  height:80vh;
-  position:fixed;
-  top:10vh;
-  left:10vw;
+#canvas {
+  border: 2rpx solid red;
+  width: 80vw;
+  height: 80vh;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
   z-index: 1000;
 }

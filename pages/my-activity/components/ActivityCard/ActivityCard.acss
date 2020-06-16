@@ -41,3 +41,6 @@
   font-size: 22rpx;
   margin-top: 13rpx;
 }
+.color-orange{
+  color:#FF943E;
+}

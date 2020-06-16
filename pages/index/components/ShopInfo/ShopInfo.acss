@@ -4,6 +4,9 @@
   margin: 27rpx auto 0;
   background: #fff;
   padding: 48rpx 24rpx;
+  margin-top: -131rpx;
+  position: relative;
+  z-index: 1;
 }
 
 .shop-name {

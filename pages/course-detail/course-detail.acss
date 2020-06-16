@@ -1,13 +1,20 @@
   .course-container {
     width: 750rpx;
-    height: 100vh;
-    background: #fff;
+    min-height: 100vh;
+    padding-bottom:110rpx;
+    overflow: hidden;
   }
+
+.course-intro{
+  background:#fff;
+  border-radius: 8rpx;
+}
 
   .course-detail {
     margin: 14rpx 25rpx;
     padding: 34rpx 24rpx;
     background: #fff;
+    border-radius:8rpx;
   }
 
   .price-box {
@@ -100,9 +107,9 @@
   .channel-title {
     color: #202224;
     font-size: 30rpx;
-    border-bottom: 1rpx solid #FFEAEB;
+    border-bottom: 1rpx solid #f5f5f5;
     padding-bottom: 24rpx;
-    padding-left: 26rpx;
+    padding-left: 0;
     font-weight: bold;
   }
 
@@ -127,6 +134,7 @@
     /* bottom: env(safe-area-inset-bottom); */
     left: 0;
     width: 750rpx;
+    border-top:1rpx solid #f5f5f5;
   }
 
   .bottom-bar::after {

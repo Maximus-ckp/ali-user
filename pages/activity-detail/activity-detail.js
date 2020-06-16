@@ -49,7 +49,7 @@ Page({
       ...app.api.COMMON_PARAMS,
       // TODO
       // activityId: this.data.activityId,
-      activityId: 1
+      activityId: "1"
     };
     my.request({
       url: app.api.getActivityInfo,

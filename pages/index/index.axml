@@ -1,6 +1,6 @@
 <view class="schedule-container">
-  <image mode="scaleToFill" src="/assets/index-background.png" class="head-bg"/>
   <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+    <image mode="scaleToFill" src="/assets/index-background.png" class="head-bg"/>
     <!-- 店铺信息 -->
     <shop-info shopName="{{shopName}}" businessHour="{{businessHour}}" shopAddress="{{shopAddress}}" shopTel="{{shopTel}}"></shop-info>
     <!-- 轮播图 -->
@@ -19,7 +19,7 @@
     <!-- 活动广场 -->
     <view class="channel-title">活动广场</view>
     <block a:for="{{activityList}}">
-      <activity-card activityId="{{item.id}}" activityPoster="{{item.coverImage}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime || '不限'}}" activityAddress="{{item.address}}" ></activity-card>
+      <activity-card activityId="{{item.id}}" activityPoster="{{item.coverImage}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime || '不限'}}" activityAddress="{{item.address}}"></activity-card>
     </block>
     <view class="spinner" style="{{show ? '' : 'display:none'}}">
       <view class="bounce1 bounce"></view>

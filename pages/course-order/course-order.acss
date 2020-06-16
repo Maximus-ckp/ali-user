@@ -2,7 +2,6 @@
   padding: 24rpx;
   width: 750rpx;
   height: 100vh;
-  background: #f8f8f8;
 }
 
 .course-main-box {

@@ -1,4 +1,5 @@
 {
+  "titleBarColor":"#FF943D",
   "defaultTitle": "商铺首页",
   "usingComponents": {
     "shop-info": "./components/ShopInfo/ShopInfo",

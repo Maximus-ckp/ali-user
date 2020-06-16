@@ -140,7 +140,8 @@
   height: 280rpx;
   margin:0 24rpx;
   background-color:rgba(215,222,229,1);
-  border-radius: 0 0 10rpx 10rpx;
+  border-radius: 0 0 8rpx 8rpx;
+  overflow: hidden;
 }
 .swiper-image{
   width:100%;

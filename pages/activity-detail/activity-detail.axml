@@ -12,18 +12,18 @@
     <view class="activity-name">{{activityName}}</view>
     <view class="activity-time">
       <image mode="scaleToFill" class="line-icon" src="/assets/icon-calendar.png"/>
-    活动时间：{{activityTime || '-'}}
+    活动时间：{{activityTime || '暂无数据'}}
     </view>
     <view class="activity-address">
       <image mode="scaleToFill" class="line-icon" src="/assets/icon-address.png"/>
-    活动地址：{{address}}
+    活动地址：{{address || '暂无数据'}}
     </view>
   </view>
   <!-- 活动详情 富文本 -->
   <view class="activity-intro">
     <view class="channel-title">
   <!-- <image mode="scaleToFill" src="{{img}}"/> -->
-    课程详情
+    活动详情
     </view>
     <rich-text class="rich-text" nodes="{{nodes}}"></rich-text>
   </view>
