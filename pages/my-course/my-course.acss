@@ -1,7 +1,6 @@
 .page{
   height:100vh;
   padding:24rpx;
-  background:rgba(255,252,248,1);
   padding-top:104rpx;
 }
 .tabs{

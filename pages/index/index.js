@@ -1,5 +1,5 @@
-import mock from "./mock"
-import swiperConfig from "/config/swiper-config"
+import mock from "./mock";
+import swiperConfig from "/config/swiper-config";
 const app = getApp();
 // mock列表数据
 
@@ -7,16 +7,16 @@ const app = getApp();
 const mockTotal = 60;
 Page({
   data: {
-    shopName: '',
-    businessHour: '',
-    shopAddress: '',
-    shopTel: '',
+    shopName: "",
+    businessHour: "",
+    shopAddress: "",
+    shopTel: "",
     courseList: mock.classList,
     activityList: mock.activityList,
     show: false, // 是否显示加载动画
     page: 1, // 当前页数
     list: [], // 页面List数据
-    swiperList:[],
+    swiperList: [],
     ...swiperConfig
   },
   onLoad() {
@@ -32,59 +32,65 @@ Page({
     let params = {
       ...app.api.COMMON_PARAMS,
       storeId: 1
-    }
+    };
     my.request({
       url: app.api.getStoreInfo,
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
-        console.log("【getStoreInfo】请求结果：",data);
-        let { address, businessTime, name, storeMobile,swiperList } = data.data;
+        console.log("【getStoreInfo】请求结果：", data);
+        let {
+          address,
+          businessTime,
+          name,
+          storeMobile,
+          swiperList
+        } = data.data;
         this.setData({
           shopName: name,
           businessHour: businessTime,
           shopAddress: address,
           shopTel: storeMobile,
           swiperList
-        })
+        });
       }
     });
   },
   findCourseList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 1,
-    }
+      storeId: 1
+    };
     my.request({
       url: app.api.findCourseList,
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
-        console.log("【findCourseList】请求结果：",data);
+        console.log("【findCourseList】请求结果：", data);
         this.setData({
-          courseList:data.data,
-        })
+          courseList: data.data
+        });
       }
     });
   },
   findActivityList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 1,
-    }
+      storeId: 1
+    };
     my.request({
       url: app.api.findActivityList,
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
-        console.log("【findActivityList】请求结果：",data);
+        console.log("【findActivityList】请求结果：", data);
         this.setData({
-          activityList:data.data,
-        })
+          activityList: data.data
+        });
       }
     });
   },
-  
+
   goToCourse({ target: { dataset } }) {
     let courseId = dataset.courseId;
     my.navigateTo({
@@ -136,7 +142,7 @@ Page({
           list.push(newObj);
         }
         this.setData({
-          activityList:list,
+          activityList: list,
           show: false
         });
       }, 1000);

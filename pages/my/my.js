@@ -1,14 +1,15 @@
-import api from "/api/api.js"
+import api from "/api/api.js";
 // 获取全局 app 实例
 const app = getApp();
 console.log(app);
 
 Page({
   data: {
-    user:{},
+    avatar: app.userInfo.avatar,
+    nickName: app.userInfo.nickName,
     baseUrl: "http://toker.dmivip.top/",
     show: false, // 是否显示加载动画
-    tel:'',
+    tel: "",
     navList: [
       {
         name: "我的课程",
@@ -46,41 +47,40 @@ Page({
     // this.getPhone();
     this.testRequest();
   },
-  getPhone(){
+  getPhone() {
     my.getPhoneNumber({
-    success: (res) => {
-        console.log( res.response)
-        this.setData({tel:res.response})
-       
-    },
-    fail: (res) => {
+      success: res => {
+        console.log(res.response);
+        this.setData({ tel: res.response });
+      },
+      fail: res => {
         console.log(res);
-        console.log('getPhoneNumber_fail');
-    },
-});
+        console.log("getPhoneNumber_fail");
+      }
+    });
   },
   testRequest() {
     let params = {
-      lang:'CN',
-      latitude:0,
-      longitude:0,
-      mobileInfo:{
-        did:'testdid',
-        emulatordid:'emulatordid',
-        imei:'testimei',
-        platform:'ios',
-        smDid:'testsmDid',
-        src:'testsrc'
+      lang: "CN",
+      latitude: 0,
+      longitude: 0,
+      mobileInfo: {
+        did: "testdid",
+        emulatordid: "emulatordid",
+        imei: "testimei",
+        platform: "ios",
+        smDid: "testsmDid",
+        src: "testsrc"
       },
-      storeId:1,
-      ver:'1.0'
-    }
-    console.log(api.indexActivityCourseList)
-    console.log(JSON.stringify(params))
+      storeId: 1,
+      ver: "1.0"
+    };
+    console.log(api.indexActivityCourseList);
+    console.log(JSON.stringify(params));
     my.request({
       url: api.getStoreInfo,
       method: "POST",
-      data: {...params},
+      data: { ...params },
       success: result => {
         console.log("请求结果：");
         console.log(result);
@@ -91,21 +91,29 @@ Page({
     try {
       setTimeout(() => {
         // 获取用户信息并存储数据
-        app.getUserInfo().then(
-          user => {
-            this.setData({
-              user
-            });
-            console.log(user);
-          },
-          () => {
-            // 获取用户信息失败
-          }
-        );
-      }, 1000);
+        // this.getUserInfo();
+      }, 60);
     } catch (e) {
       console.log("mySchedulde执行异常:", e);
     }
+  },
+  getUserInfo() {
+    app.testGlobal=15
+    console.log(app.testGlobal)
+    app.getUserInfo().then(
+      user => {
+        // this.setData({
+        //   user
+        // });
+        // console.log(user);
+        let {avatar,nickName} = user;
+        app.userInfo.avatar = avatar;
+        app.userInfo.nickName = nickName;
+      },
+      () => {
+        // 获取用户信息失败
+      }
+    );
   },
   onListClick(e) {
     let {

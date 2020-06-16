@@ -154,6 +154,7 @@ swiper {
   border-radius: 36rpx;
   right: 24rpx;
   top: 14rpx;
+  border:none;
 }
 
 .gray {
@@ -213,6 +214,7 @@ input {
   text-align: center;
   color: #fff;
   font-size: 32rpx;
+  border:none;
 }
 
 #canvas {
