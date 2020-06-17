@@ -19,6 +19,7 @@ Page({
     tel: "",
     bbAge: "",
     bbName: "",
+    richText:"",
 
     showSharePoster: false,
 
@@ -85,7 +86,7 @@ Page({
     });
   },
   str2node(htmlTxt) {
-    htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
+    // htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
     console.log(htmlTxt);
 
     parse(htmlTxt, (err, nodes) => {

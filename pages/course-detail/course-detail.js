@@ -22,6 +22,7 @@ Page({
     ...swiperConfig,
 
     inputValue: '',
+    richText:'',
     nodes: []
   },
   onLoad(query) {
@@ -49,15 +50,17 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【getCourseInfo】请求结果：", data);
-        let { courseName, discountPrice, originalPrice, swiperList, effectiveTime,orderStatus,labelList } = data.data;
+        let { courseName, discountPrice, originalPrice, swiperList, effectiveTime,orderStatus,labelList, detail} = data.data;
         this.setData({
           courseName,
           swiperList,
           oriPrice: originalPrice,
           promotionPrice: discountPrice, effectiveTime,
           orderStatus,
-          labelList
-        })
+          labelList,
+          richText: detail
+        });
+        this.str2node(this.data.richText || "");
       }
     });
   },
@@ -66,16 +69,19 @@ Page({
       inputValue: e.detail.value
     });
   },
-  str2node() {
-    console.log(this.data.inputValue)
-    parse(this.data.inputValue, (err, nodes) => {
+  str2node(htmlTxt) {
+    // htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
+    console.log('htmlTxt');
+    console.log(htmlTxt);
+    parse(htmlTxt, (err, nodes) => {
+      console.log(err)
       if (!err) {
+        
         this.setData({
-          nodes,
+          nodes
         });
       }
-    })
-    console.log(this.data.nodes)
+    });
   },
   buyCourse() {
     console.log('gobuy')
