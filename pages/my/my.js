@@ -73,7 +73,7 @@ Page({
         smDid: "testsmDid",
         src: "testsrc"
       },
-      storeId: 1,
+      storeId: 2,
       ver: "1.0"
     };
     console.log(api.indexActivityCourseList);

@@ -11,7 +11,7 @@
   display: flex;
   height:80rpx;
   line-height:80rpx;
-  width:702rpx;
+  width:750rpx;
   font-size:32rpx;
   z-index: 100;
 }

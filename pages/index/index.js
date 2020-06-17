@@ -31,7 +31,7 @@ Page({
   getStoreInfo() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 1
+      storeId: 2
     };
     my.request({
       url: app.api.getStoreInfo,
@@ -59,7 +59,7 @@ Page({
   findCourseList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 1
+      storeId: 2
     };
     my.request({
       url: app.api.findCourseList,
@@ -76,7 +76,7 @@ Page({
   findActivityList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 1
+      storeId: 2
     };
     my.request({
       url: app.api.findActivityList,

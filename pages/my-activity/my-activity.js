@@ -25,7 +25,7 @@ Page({
   findCustomerActivityList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      customerId: 1,
+      customerId: 2,
       orderBy: "string",
       pageNo: 1,
       pageSize: 6,

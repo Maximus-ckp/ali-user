@@ -1,4 +1,4 @@
-import swiperConfig from "/config/swiper-config"
+import swiperConfig from "/config/swiper-config";
 import parse from "mini-html-parser2";
 // 获取全局 app 实例
 const app = getApp();
@@ -6,6 +6,7 @@ console.log(app);
 
 Page({
   data: {
+    isSign: 1, // 1 已报名 0 未报名
     posterUrl: "",
     activityId: "",
     activityName: "",
@@ -51,8 +52,8 @@ Page({
     let params = {
       ...app.api.COMMON_PARAMS,
       // TODO
-      // activityId: this.data.activityId,
-      activityId: "1"
+      activityId: this.data.activityId
+      // activityId: "1"
     };
     my.request({
       url: app.api.getActivityInfo,
@@ -66,7 +67,8 @@ Page({
           address,
           coverImage,
           swiperList,
-          detail
+          detail,
+          isSign
         } = data.data;
         this.setData({
           activityName,
@@ -75,7 +77,8 @@ Page({
           coverImage,
           posterUrl: coverImage,
           swiperList,
-          richText: detail
+          richText: detail,
+          isSign
         });
         this.str2node(this.data.richText || "");
       }
@@ -94,6 +97,9 @@ Page({
     });
   },
   signup() {
+    if (this.data.isSign) {
+      return;
+    }
     this.setData({
       showPopup: true
     });
@@ -114,9 +120,7 @@ Page({
     //   }
     // });
   },
-  showSharePanel() {
-    this.setData({ showSharePoster: true })
-  },
+
   onShareAppMessage() {
     return {
       title: "分享 View 组件",
@@ -187,7 +191,7 @@ Page({
     let params = {
       ...app.api.COMMON_PARAMS,
       // TODO
-      activityId: "1",
+      activityId: this.data.activityId,
       babyAge: this.data.bbAge,
       babyName: this.data.babyName,
       userMobile: this.data.tel,
@@ -204,6 +208,18 @@ Page({
           title: "提示",
           content: "报名成功！",
           buttonText: "好的",
+          success: () => {
+            this.setData({
+              showPopup: false
+            });
+          }
+        });
+      },
+      fail: function(res) {
+         my.alert({
+          title: "提示",
+          content: "报名失败，请重试！",
+          buttonText: "再试试",
           success: () => {
             this.setData({
               showPopup: false
@@ -236,7 +252,7 @@ Page({
     return canvasCtx.toDataURL("image/png");
   },
   closeSharePoster() {
-    this.setData({ showSharePoster: false })
+    this.setData({ showSharePoster: false });
   },
   downloadPoster(posterUrl) {
     my.saveImage({
@@ -249,9 +265,18 @@ Page({
             this.setData({ showSharePoster: false });
           }
         });
-
-
       }
     });
+  },
+  // 映射 ref 为 posterRef 的组件到 potser
+  posterRef(ref) {
+    this.poster = ref;
+  },
+  // 调用子组件方法
+  showSharePanel() {
+    this.setData({ showSharePoster: true });
+    setTimeout(() => {
+      this.poster.draw();
+    }, 0);
   }
 });
