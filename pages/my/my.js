@@ -91,13 +91,16 @@ Page({
   async initData() {
     try {
       this.getUserInfo();
+      setTimeout(() => {
+        this.getUserInfo();
+      }, 300);
       let timer = setTimeout(() => {
         if (!this.data.avatar) {
-          this.initData();
+          this.getUserInfo();
         } else {
-          clearTimeout(timer)
+          clearTimeout(timer);
         }
-      }, 200);
+      }, 2000);
     } catch (e) {
       console.log("mySchedulde执行异常:", e);
     }
@@ -109,7 +112,7 @@ Page({
           user
         });
         let { avatar, nickName } = user;
-        console.log(avatar, nickName)
+        console.log(avatar, nickName);
         this.setData({
           avatar,
           nickName
