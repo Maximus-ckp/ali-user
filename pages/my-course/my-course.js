@@ -56,7 +56,7 @@ Page({
         })
         }
         this.setData({
-          totalList: [...data.data,...data.data,...data.data],
+          totalList: data.data
         })
       }
     });

@@ -19,7 +19,7 @@ Page({
     tel: "",
     bbAge: "",
     bbName: "",
-    richText:"",
+    richText: "",
 
     showSharePoster: false,
 
@@ -88,7 +88,7 @@ Page({
   str2node(htmlTxt) {
     // htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
     console.log(htmlTxt);
-
+    htmlTxt = htmlTxt.replace(/<img/g, "<img style='max-width:100%;border-radius:6px;'");
     parse(htmlTxt, (err, nodes) => {
       if (!err) {
         this.setData({
@@ -216,8 +216,8 @@ Page({
           }
         });
       },
-      fail: function(res) {
-         my.alert({
+      fail: function (res) {
+        my.alert({
           title: "提示",
           content: "报名失败，请重试！",
           buttonText: "再试试",
@@ -278,6 +278,6 @@ Page({
     this.setData({ showSharePoster: true });
     setTimeout(() => {
       this.poster.draw();
-    }, 0);
+    }, 60);
   }
 });

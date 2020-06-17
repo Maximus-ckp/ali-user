@@ -73,6 +73,7 @@ Page({
     // htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
     console.log('htmlTxt');
     console.log(htmlTxt);
+    htmlTxt = htmlTxt.replace(/<img/g,"<img style='max-width:100%;border-radius:6px;'");
     parse(htmlTxt, (err, nodes) => {
       console.log(err)
       if (!err) {

@@ -37,19 +37,18 @@ Page({
       success: ({ data }) => {
         console.log("【findCustomerActivityList】请求结果：", data);
         this.setData({
-          activityList: [...data.data,...data.data,...data.data,...data.data,...data.data],
+          activityList: data.data
         })
       }
     });
   },
   loadMore(){
-    console.log(Date.now())
-    let newList = this.data.activityList;
-    newList.push(newList[0]);
+    // let newList = this.data.activityList;
+    // newList.push(newList[0]);
     this.setData({showLoadMore:true})
     setTimeout(()=>{
       this.setData({
-        activityList:newList,
+        // activityList:newList,
         showLoadMore:false
       })
     },1000)

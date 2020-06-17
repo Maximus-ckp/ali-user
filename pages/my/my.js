@@ -43,7 +43,7 @@ Page({
       }
     ]
   },
-  onLoad() {
+  onShow() {
     this.initData();
     // this.getPhone();
     this.testRequest();
