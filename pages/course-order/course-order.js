@@ -72,6 +72,10 @@ Page({
     });
   },
   payOrder() {
+    my.showLoading({
+      content: '加载中...',
+      delay: '500',
+    });
     let params = {
       courseId: "1",
       lang: "CN",
@@ -95,6 +99,7 @@ Page({
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
+        my.hideLoading();
         console.log("【saveStoreOrder】请求结果：", data);
         let { code } = data;
         console.log(code);

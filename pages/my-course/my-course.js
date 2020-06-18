@@ -2,8 +2,9 @@ const app = getApp();
 
 Page({
   data: {
+    isLoading:true,
     tabIdx: 0,
-    totalList: [1, 2, 3],
+    totalList: [],
     unusedList: [],
     orderBy: "string",
     orderStatus: 0,
@@ -49,10 +50,12 @@ Page({
         console.log("【findCustomerCourseList】请求结果：", data);
         if (orderType === 1) {
           this.setData({
+            isLoading:false,
             unusedList: data.data
           });
         } else {
           this.setData({
+            isLoading:false,
             totalList: data.data
           });
         }

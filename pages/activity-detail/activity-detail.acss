@@ -6,6 +6,9 @@
   overflow: hidden;
   padding-bottom: 110rpx;
   margin-bottom: 116rpx;
+  height:100vh;
+  box-sizing: border-box;
+  overflow-y:scroll;
 }
 
 swiper {

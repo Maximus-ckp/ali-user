@@ -4,6 +4,7 @@ const app = getApp();
 
 Page({
   data: {
+    isLoading:true,
     courseId:'',
     promotionPrice: '',
     oriPrice: '',
@@ -38,6 +39,10 @@ Page({
   },
   // 获取课程信息
   getCourseInfo() {
+    my.showLoading({
+      content: '加载中...',
+      delay: '500',
+    });
     let params = {
       ...app.api.COMMON_PARAMS,
       courseId: this.data.courseId,
@@ -47,9 +52,11 @@ Page({
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
+        my.hideLoading();
         console.log("【getCourseInfo】请求结果：", data);
         let { courseName, discountPrice, originalPrice, swiperList, effectiveTime,orderStatus,labelList, detail} = data.data;
         this.setData({
+          isLoading:false,
           courseName,
           swiperList,
           oriPrice: originalPrice,

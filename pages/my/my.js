@@ -86,6 +86,10 @@ Page({
     });
   },
   async initData() {
+    my.showLoading({
+      content: '获取用户信息...',
+      delay: '300',
+    });
     try {
       this.getUserInfo();
       setTimeout(() => {
@@ -105,6 +109,7 @@ Page({
   async getUserInfo() {
     await app.getUserInfo().then(
       user => {
+        my.hideLoading();
         this.setData({
           user
         });

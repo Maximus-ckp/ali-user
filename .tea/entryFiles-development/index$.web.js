@@ -1,6 +1,7 @@
 require('@alipay/appx-compiler/lib/sjsEnvInit');
 require('./config$');
 
+require('../../node_modules/ant-skeleton/components/skeleton/skeleton?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
 require('../../pages/index/components/ShopInfo/ShopInfo?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
 require('../../pages/index/components/ActivityCard/ActivityCard?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
 require('../../pages/index/components/ClassCard/ClassCard?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
@@ -12,7 +13,7 @@ require('../../node_modules/mini-ali-ui/es/input-item/index?hash=5a0c180d5ccf7c9
 require('../../pages/activity-detail/components/SharePoster/SharePoster?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
 require('../../pages/my-course/components/CourseCard/CourseCard?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
 require('../../pages/my-activity/components/ActivityCard/ActivityCard?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
-require('../../pages/index/index?hash=936cdbd122b9dce42e98d109b60ffd1c384ea347');
+require('../../pages/index/index?hash=12e2c67484c4051c8902f0118c1a9d236658ef78');
 require('../../pages/activity-detail/activity-detail?hash=9007f12f04fe659158939ba74dfb5ccc39e3140e');
 require('../../pages/my-course/my-course?hash=648d762e57bc50e936f23cfd1f14486ef6e6c538');
 require('../../pages/my-activity/my-activity?hash=5748add3881b16e8e784d386e16e57bb2afb405f');

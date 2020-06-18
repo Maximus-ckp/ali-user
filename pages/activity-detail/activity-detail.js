@@ -4,6 +4,7 @@ const app = getApp();
 
 Page({
   data: {
+    isLoading:true,
     isSign: 0, // 1 已报名 0 未报名
     posterUrl: "",
     activityId: "",
@@ -70,6 +71,7 @@ Page({
           isSign
         } = data.data;
         this.setData({
+          isLoading:false,
           activityName,
           activityTime,
           address,
@@ -77,7 +79,7 @@ Page({
           posterUrl: coverImage,
           swiperList,
           richText: detail,
-          isSign: 0
+          isSign:0
         });
         this.str2node(this.data.richText || "");
       }
@@ -166,7 +168,12 @@ Page({
       result.msg = "请正确填写您的手机号";
       return result;
     }
-    if (!this.data.bbAge || !/^\d{1,2}$/.test(this.data.bbAge)) {
+    // if (!this.data.bbAge || !/^\d{1,2}$/.test(this.data.bbAge)) {
+    //   result.validated = false;
+    //   result.msg = "请正确填写宝宝年龄";
+    //   return result;
+    // }
+     if (!this.data.bbAge) {
       result.validated = false;
       result.msg = "请正确填写宝宝年龄";
       return result;
@@ -198,6 +205,10 @@ Page({
     });
   },
   saveActivitySign() {
+    my.showLoading({
+      content: '加载中...',
+      delay: '500',
+    });
     let params = {
       ...app.api.COMMON_PARAMS,
       // TODO
@@ -212,6 +223,7 @@ Page({
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
+        my.hideLoading();
         console.log("saveActivitySign");
         console.log(data);
         my.alert({
@@ -291,9 +303,13 @@ Page({
     }, 60);
   },
   scrollToTop(){
-    my.pageScrollTo({
-      scrollTop: 1,
-      duration:300
-    })
+    // my.pageScrollTo({
+    //   scrollTop: 1,
+    //   duration:300
+    // })
+  },
+  aaa(){
+    console.log(1111)
+    my.alert({title:'confirm'})
   }
 });

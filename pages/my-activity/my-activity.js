@@ -2,6 +2,7 @@ const app = getApp();
 
 Page({
   data: {
+    isLoading:true,
     activityList: [],
     orderBy: "string",
     orderStatus: 0,
@@ -35,6 +36,7 @@ Page({
       success: ({ data }) => {
         console.log("【findCustomerActivityList】请求结果：", data);
         this.setData({
+          isLoading:false,
           activityList: data.data
         })
       }

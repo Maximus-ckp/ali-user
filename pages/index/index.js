@@ -6,6 +6,7 @@ const app = getApp();
 const mockTotal = 60;
 Page({
   data: {
+    isLoading:true,
     shopName: "",
     businessHour: "",
     shopAddress: "",
@@ -50,7 +51,8 @@ Page({
           businessHour: businessTime,
           shopAddress: address,
           shopTel: storeMobile,
-          swiperList
+          swiperList,
+          isLoading:false
         });
       }
     });
@@ -73,6 +75,10 @@ Page({
     });
   },
   findActivityList() {
+    my.showLoading({
+      content: '加载中...',
+      delay: '500',
+    });
     let params = {
       ...app.api.COMMON_PARAMS,
       storeId: 2
@@ -82,6 +88,7 @@ Page({
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
+        my.hideLoading();
         console.log("【findActivityList】请求结果：", data);
         this.setData({
           activityList: data.data

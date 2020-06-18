@@ -3,7 +3,8 @@
     <view class="tab-item {{tabIdx === 0 ? 'active':''}}" data-tabIdx="{{0}}" onTap="switchTab" >全部</view>
     <view class="tab-item {{tabIdx === 1 ? 'active':''}}" data-tabIdx="{{1}}" onTap="switchTab">未消费</view>
   </view>
-  <view class="tab-content">
+  <ant-skeleton a:if="{{isLoading}}"/>
+  <view a:else class="tab-content">
     <!-- 全部课程 -->
     <view class="tab-pane" a:if="{{tabIdx === 0}}">
       <block a:for="{{totalList}}">
