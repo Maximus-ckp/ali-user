@@ -16,12 +16,10 @@ Component({
     activityQR: "/assets/QR.png"
   },
   didMount() {
-    console.log("didMount" + Date.now());
     this.$page.poster = this;
     this.ctx = my.createCanvasContext("canvas");
   },
   didUpdate() {
-    // console.log(this.props.timeStamp)
     console.log("didUpdate" + Date.now());
     // this.draw()
   },

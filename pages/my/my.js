@@ -1,7 +1,5 @@
 import api from "/api/api.js";
-// 获取全局 app 实例
 const app = getApp();
-console.log(app);
 
 Page({
   data: {
@@ -51,11 +49,9 @@ Page({
   getPhone() {
     my.getPhoneNumber({
       success: res => {
-        console.log(res.response);
         this.setData({ tel: res.response });
       },
       fail: res => {
-        console.log(res);
         console.log("getPhoneNumber_fail");
       }
     });
@@ -76,7 +72,6 @@ Page({
       storeId: 2,
       ver: "1.0"
     };
-    console.log(api.indexActivityCourseList);
     console.log(JSON.stringify(params));
     my.request({
       url: api.getStoreInfo,

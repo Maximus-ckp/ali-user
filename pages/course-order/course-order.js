@@ -1,6 +1,4 @@
-// 获取全局 app 实例
 const app = getApp();
-console.log(app);
 
 Page({
   data: {

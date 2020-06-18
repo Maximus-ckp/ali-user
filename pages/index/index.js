@@ -1,7 +1,6 @@
 import mock from "./mock";
 import swiperConfig from "/config/swiper-config";
 const app = getApp();
-// mock列表数据
 
 // mock列表总数
 const mockTotal = 60;
