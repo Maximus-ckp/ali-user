@@ -9,7 +9,6 @@
 }
 
 #canvas {
-  border: 2rpx solid green;
   position: fixed;
   width: 556rpx;
   height: 850rpx;
@@ -19,12 +18,22 @@
   background: #fff;
 }
 
-.close{
+.poster-whole-img {
+  position: fixed;
+  width: 556rpx;
+  height: 850rpx;
+  top: 6vh;
+  left: 13vw;
+  z-index: 1000;
+  background: #fff;
+}
+
+.close {
   width: 64rpx;
   height: 64rpx;
-   position:fixed;
-  right:64rpx;
-  top:3.3vh;
+  position: fixed;
+  right: 64rpx;
+  top: 3.3vh;
   z-index: 1001;
 }
 
@@ -37,11 +46,12 @@
   line-height: 80rpx;
   background: rgba(255, 148, 61, 1);
   border-radius: 40rpx;
-  position:fixed;
-  left:217rpx;
-  top:985rpx;
-  transition:all .3s;
+  position: fixed;
+  left: 217rpx;
+  top: 985rpx;
+  transition: all .3s;
 }
-.download.disabled{
-  background:#C4CACE;
+
+.download.disabled {
+  background: #C4CACE;
 }

@@ -12,17 +12,19 @@ Page({
     navList: [
       {
         name: "我的课程",
-        onClick: () =>
+        onClick: () => {
           my.navigateTo({
             url: "/pages/my-course/my-course"
-          })
+          });
+        }
       },
       {
         name: "我的活动",
-        onClick: () =>
+        onClick: () => {
           my.navigateTo({
             url: "/pages/my-activity/my-activity"
-          })
+          });
+        }
       }
     ],
     nodes: [
@@ -129,6 +131,10 @@ Page({
     console.log(dataset);
     const { onClick } = this.data.navList[dataset.index];
     if (onClick) {
+      if (!this.data.avatar) {
+        this.getUserInfo();
+        return;
+      }
       onClick();
     }
   }

@@ -77,7 +77,7 @@ Page({
           posterUrl: coverImage,
           swiperList,
           richText: detail,
-          isSign:0
+          isSign: 0
         });
         this.str2node(this.data.richText || "");
       }
@@ -85,8 +85,11 @@ Page({
   },
   str2node(htmlTxt) {
     // htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
-    console.log(htmlTxt);
-    htmlTxt = htmlTxt.replace(/<img/g, "<img style='max-width:100%;border-radius:6px;'");
+    // console.log(htmlTxt);
+    htmlTxt = htmlTxt.replace(
+      /<img/g,
+      "<img style='max-width:100%;border-radius:6px;'"
+    );
     parse(htmlTxt, (err, nodes) => {
       if (!err) {
         this.setData({
@@ -99,9 +102,17 @@ Page({
     if (this.data.isSign) {
       return;
     }
-    this.setData({
-      showPopup: true
+    let duration = 200;
+    my.pageScrollTo({
+      scrollTop: 1,
+      duration
     });
+    setTimeout(() => {
+      this.setData({
+        showPopup: true
+      });
+    }, duration+100);
+
     // this.data.showPopup = true;
   },
   share() {
@@ -214,7 +225,7 @@ Page({
           }
         });
       },
-      fail: function (res) {
+      fail: function(res) {
         my.alert({
           title: "提示",
           content: "报名失败，请重试！",

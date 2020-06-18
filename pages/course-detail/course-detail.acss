@@ -134,7 +134,7 @@
     display: flex;
     position: fixed;
     bottom: 0;
-    /* bottom: env(safe-area-inset-bottom); */
+    bottom: env(safe-area-inset-bottom);
     left: 0;
     width: 750rpx;
     border-top: 1rpx solid #f5f5f5;
