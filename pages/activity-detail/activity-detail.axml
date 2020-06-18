@@ -28,7 +28,7 @@
     </view>
     <!--<rich-text class="rich-text" nodes="{{nodes}}"></rich-text> -->
     <view class="rich-text-fake-container">
-      <image class="rich-text-fake" mode="widthFix" src="/assets/rich-text-2.png"/>
+      <image class="rich-text-fake" mode="widthFix" src="{{richText}}"/>
       <!--<image class="rich-text-fake" mode="widthFix" src="{{richText}}"/> -->
     </view>
   </view>
@@ -56,6 +56,7 @@
     <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="10" placeholder="请输入宝宝姓名" fixed="true" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel" onConfirm="aaa"/>
     <button class="submit-btn" onTap="submit">确定报名</button>
   </view>
+  <view class="polyfill-bottom" a:if="{{showPopup}}"></view>
   <!--</popup> -->
   <!--</view> -->
 </view>

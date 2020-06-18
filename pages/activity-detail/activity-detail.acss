@@ -5,7 +5,6 @@
   margin: 16rpx auto 0;
   overflow: hidden;
   padding-bottom: 110rpx;
-  margin-bottom: 116rpx;
   height:100vh;
   box-sizing: border-box;
   overflow-y:scroll;
@@ -184,6 +183,17 @@ swiper {
   left:0;
   position: absolute;
   z-index: 1001;
+}
+/* 底部白色防止输入框镂空 */
+.polyfill-bottom{
+  position: fixed;
+  content:'';
+  left:0;
+  bottom:0;
+  width:100%;
+  height:650rpx;
+  background: #fff;
+  z-index: 1000;
 }
 .mask{
 

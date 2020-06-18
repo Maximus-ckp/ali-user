@@ -26,12 +26,12 @@ Page({
   },
   onLoad(query) {
     console.log(query);
-    this.initData();
     let { courseId } = query;
     console.log(courseId);
     this.setData({
       courseId
     });
+    this.initData();
   },
   async initData() {
     try {
@@ -44,7 +44,7 @@ Page({
   getCourseInfo() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      courseId: "1"
+      courseId: this.data.courseId
     };
     my.request({
       url: app.api.getCourseInfo,

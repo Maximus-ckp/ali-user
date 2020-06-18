@@ -2,6 +2,7 @@
   "defaultTitle": "我的活动",
   "backgroundColor": "#ffffff",
   "usingComponents": {
+    "ant-skeleton":"ant-skeleton/components/skeleton/skeleton",
     "activity-card": "./components/ActivityCard/ActivityCard"
   }
 }

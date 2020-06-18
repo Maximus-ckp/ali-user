@@ -4,7 +4,7 @@ const app = getApp();
 
 Page({
   data: {
-    isLoading:true,
+    isLoading: true,
     isSign: 0, // 1 已报名 0 未报名
     posterUrl: "",
     activityId: "",
@@ -71,7 +71,7 @@ Page({
           isSign
         } = data.data;
         this.setData({
-          isLoading:false,
+          isLoading: false,
           activityName,
           activityTime,
           address,
@@ -79,7 +79,7 @@ Page({
           posterUrl: coverImage,
           swiperList,
           richText: detail,
-          isSign:0
+          isSign
         });
         this.str2node(this.data.richText || "");
       }
@@ -113,11 +113,11 @@ Page({
       this.setData({
         showPopup: true
       });
-    }, duration+100);
+    }, duration + 100);
 
     // this.data.showPopup = true;
   },
-  share() {
+  share1() {
     // my.showSharePanel();
     this.showSharePanel();
     // let { url } = this.data;
@@ -132,12 +132,15 @@ Page({
     //   }
     // });
   },
-
+  share() {
+    my.showSharePanel();
+  },
   onShareAppMessage() {
     return {
-      title: "分享 View 组件",
-      desc: "View 组件很通用"
-      // path: 'page/component/view/view',
+      title: "好店分享",
+      desc: "店家发起了一个有趣的活动推荐给您！",
+      path: "pages/activity-detail/activity-detail?activityId="+this.data.activityId,
+      bgImgUrl:"/assets/poster-02.png"
     };
   },
   onPopupClose() {
@@ -173,7 +176,7 @@ Page({
     //   result.msg = "请正确填写宝宝年龄";
     //   return result;
     // }
-     if (!this.data.bbAge) {
+    if (!this.data.bbAge) {
       result.validated = false;
       result.msg = "请正确填写宝宝年龄";
       return result;
@@ -206,8 +209,8 @@ Page({
   },
   saveActivitySign() {
     my.showLoading({
-      content: '加载中...',
-      delay: '500',
+      content: "加载中...",
+      delay: "500"
     });
     let params = {
       ...app.api.COMMON_PARAMS,
@@ -233,7 +236,7 @@ Page({
           success: () => {
             this.setData({
               showPopup: false,
-              isSign:1
+              isSign: 1
             });
           }
         });
@@ -302,14 +305,14 @@ Page({
       this.poster.draw();
     }, 60);
   },
-  scrollToTop(){
+  scrollToTop() {
     // my.pageScrollTo({
     //   scrollTop: 1,
     //   duration:300
     // })
   },
-  aaa(){
-    console.log(1111)
-    my.alert({title:'confirm'})
+  aaa() {
+    console.log(1111);
+    my.alert({ title: "confirm" });
   }
 });

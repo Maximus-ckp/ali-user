@@ -2,6 +2,7 @@
   "defaultTitle": "活动详情",
   "backgroundColor": "#ffffff",
   "usingComponents": {
+    "ant-skeleton":"ant-skeleton/components/skeleton/skeleton",
     "popup": "mini-ali-ui/es/popup/index",
     "list": "mini-antui/es/list/index",
     "list-item": "mini-antui/es/list/list-item/index",

@@ -2,8 +2,8 @@
   "defaultTitle": "课程详情",
   "backgroundColor": "#ffffff",
   "titleBarColor":"#fff",
-  "titleBarColor":"#fff",
   "usingComponents": {
+    "ant-skeleton":"ant-skeleton/components/skeleton/skeleton",
     "list": "mini-antui/es/list/index",
     "list-item": "mini-antui/es/list/list-item/index"
   }
