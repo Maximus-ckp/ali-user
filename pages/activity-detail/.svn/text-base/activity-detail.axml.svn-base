@@ -22,13 +22,12 @@
   <!-- 活动详情 富文本 -->
   <view class="activity-intro">
     <view class="channel-title">
-  <!-- <image mode="scaleToFill" src="{{img}}"/> -->
+      <!--<image mode="scaleToFill" src="{{img}}"/> -->
     活动详情
     </view>
     <rich-text class="rich-text" nodes="{{nodes}}"></rich-text>
   </view>
-    <!-- <canvas id="canvas" width="610" height="610" class="canvas"/> -->
-
+  <!--<canvas id="canvas" width="610" height="610" class="canvas"/> -->
   <!-- 底部按钮条 -->
   <view class="bottom-bar">
     <view class="bottom-left" onTap="share">
@@ -36,24 +35,21 @@
       <view class="share-txt">分享</view>
     </view>
     <view class="bottom-right" onTap="signup">
-      <button class="bottom-right-btn">立即报名</button>
+
+      <button class="bottom-right-btn {{isSign === 1 ? 'gray':''}}">{{isSign ? '已报名': '立即报名' }}</button>
     </view>
   </view>
-  
-  
-
   <popup show="{{showPopup}}" position="bottom" onClose="onPopupClose">
     <view class="popup-box">
       <view class="form-notice">
       请填入正确信息以便联系到您~
       </view>
       <image mode="scaleToFill" class="btn-close" onTap="onPopupClose" src="/assets/btn-close.png"/>
-      
-      <input placeholder="请输入您的手机号" type="text" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
-      <input placeholder="请输入宝宝年龄" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
-      <input placeholder="请输入宝宝姓名" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel"/>
+      <input placeholder="请输入您的手机号" fixed="true" type="text" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
+      <input placeholder="请输入宝宝年龄" fixed="true" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
+      <input placeholder="请输入宝宝姓名" fixed="true" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel"/>
       <button class="submit-btn" onTap="submit">确定报名</button>
     </view>
   </popup>
 </view>
-<share-poster timeStamp="{{Date.now()}}" showSharePoster="{{showSharePoster}}" coverUrl="{{posterUrl}}" closePoster="closeSharePoster"></share-poster>
+<share-poster ref="posterRef" timeStamp="{{Date.now()}}" showSharePoster="{{showSharePoster}}" coverUrl="{{posterUrl}}" closePoster="closeSharePoster" activityAddress="{{address}}" activityName="{{activityName}}"></share-poster>

@@ -44,5 +44,4 @@
 }
 .download.disabled{
   background:#C4CACE;
-  pointer-events: none;
 }

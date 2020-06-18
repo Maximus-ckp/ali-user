@@ -134,15 +134,16 @@ Page({
     try {
       let list = this.data.activityList;
       // 模拟请求拿到数据进行更新data
+      // 暂时下拉不拼接假数据
       setTimeout(() => {
-        let data = this.data.activityList;
-        for (let i = 0; i < 3; i++) {
-          // let newObj = { title:'下拉家在', remarksa: `我是第${page}页` };
-          let newObj = { ...data[i] };
-          list.push(newObj);
-        }
+      //   let data = this.data.activityList;
+      //   for (let i = 0; i < 3; i++) {
+      //     // let newObj = { title:'下拉家在', remarksa: `我是第${page}页` };
+      //     let newObj = { ...data[i] };
+      //     list.push(newObj);
+      //   }
         this.setData({
-          activityList: list,
+          // activityList: list,
           show: false
         });
       }, 1000);

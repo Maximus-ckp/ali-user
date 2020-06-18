@@ -7,7 +7,7 @@
             支付时间: {{payTime}}
     </view>
     <view class="course-status {{orderStatus===3 ? 'active':''}}">
-            {{statusList[orderStatus]}}
+            {{statusList[orderStatus-1]}}
     </view>
   </view>
   <view class="card-middle">

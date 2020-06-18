@@ -8,5 +8,6 @@
     />
   </view>
   <image onTap="close" class="close" mode="scaleToFill" src="/assets/btn-close2.png"/>
-  <view onTap="save"  class="download {{isSaving ? 'disabled' : ''}}">{{!isSaving ? '下载海报到相册':'保存中'}}</view>
+  <!-- <view onTap="save"  class="download {{isSaving ? 'disabled' : ''}}">{{!isSaving ? '下载海报到相册':'保存中'}}</view> -->
+  <view onTap="save"  class="download {{isSaving ? 'disabled' : ''}}">{{btnTxt}}</view>
 </view>

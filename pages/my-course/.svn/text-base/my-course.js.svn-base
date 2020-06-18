@@ -34,7 +34,7 @@ Page({
   findCustomerCourseList(orderType=0) {
     let params = {
       ...app.api.COMMON_PARAMS,
-      customerId: 1,
+      customerId: 2,
       orderBy: "string",
       // orderStatus: 3,
       pageNo: 1,
@@ -56,7 +56,7 @@ Page({
         })
         }
         this.setData({
-          totalList: [...data.data,...data.data,...data.data],
+          totalList: data.data
         })
       }
     });

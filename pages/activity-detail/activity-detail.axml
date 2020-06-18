@@ -45,9 +45,9 @@
       请填入正确信息以便联系到您~
       </view>
       <image mode="scaleToFill" class="btn-close" onTap="onPopupClose" src="/assets/btn-close.png"/>
-      <input placeholder="请输入您的手机号" type="text" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
-      <input placeholder="请输入宝宝年龄" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
-      <input placeholder="请输入宝宝姓名" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel"/>
+      <input placeholder="请输入您的手机号" fixed="true" type="text" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
+      <input placeholder="请输入宝宝年龄" fixed="true" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
+      <input placeholder="请输入宝宝姓名" fixed="true" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel"/>
       <button class="submit-btn" onTap="submit">确定报名</button>
     </view>
   </popup>

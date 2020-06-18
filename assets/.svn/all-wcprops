@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/toker/!svn/ver/40/front/ali-user/assets/tab-home.png
 END
-icon-shop.png
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/svn/toker/!svn/ver/13/front/ali-user/assets/icon-shop.png
-END
 icon-calendar.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
 /svn/toker/!svn/ver/33/front/ali-user/assets/icon-calendar.png
+END
+icon-shop.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/toker/!svn/ver/13/front/ali-user/assets/icon-shop.png
 END
 logo.png
 K 25
@@ -27,11 +27,11 @@ svn:wc:ra_dav:version-url
 V 52
 /svn/toker/!svn/ver/4/front/ali-user/assets/logo.png
 END
-my-background.png
+tab-my-active.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/toker/!svn/ver/33/front/ali-user/assets/my-background.png
+/svn/toker/!svn/ver/40/front/ali-user/assets/tab-my-active.png
 END
 badge.png
 K 25
@@ -39,11 +39,11 @@ svn:wc:ra_dav:version-url
 V 54
 /svn/toker/!svn/ver/13/front/ali-user/assets/badge.png
 END
-tab-my-active.png
+my-background.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/toker/!svn/ver/40/front/ali-user/assets/tab-my-active.png
+/svn/toker/!svn/ver/33/front/ali-user/assets/my-background.png
 END
 tab-home-active.png
 K 25
@@ -51,17 +51,17 @@ svn:wc:ra_dav:version-url
 V 64
 /svn/toker/!svn/ver/40/front/ali-user/assets/tab-home-active.png
 END
-complete.png
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/svn/toker/!svn/ver/33/front/ali-user/assets/complete.png
-END
 btn-close2.png
 K 25
 svn:wc:ra_dav:version-url
 V 59
 /svn/toker/!svn/ver/41/front/ali-user/assets/btn-close2.png
+END
+complete.png
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/toker/!svn/ver/33/front/ali-user/assets/complete.png
 END
 icon-tel.png
 K 25
@@ -80,6 +80,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 55
 /svn/toker/!svn/ver/33/front/ali-user/assets/avatar.png
+END
+QR.png
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/toker/!svn/ver/46/front/ali-user/assets/QR.png
 END
 btn-share.png
 K 25
