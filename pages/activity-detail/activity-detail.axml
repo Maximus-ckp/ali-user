@@ -27,7 +27,7 @@
     </view>
     <!--<rich-text class="rich-text" nodes="{{nodes}}"></rich-text> -->
     <view class="rich-text-fake-container">
-      <image class="rich-text-fake" mode="widthFix" src="/assets/rich-text-1.png"/>
+      <image class="rich-text-fake" mode="widthFix" src="/assets/rich-text-2.png"/>
     </view>
   </view>
   <!--<canvas id="canvas" width="610" height="610" class="canvas"/> -->
