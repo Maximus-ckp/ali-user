@@ -14,5 +14,5 @@
     </view>
   </view>
 
-  <button class="btn">立即支付</button>
+  <button class="btn" onTap="pay">立即支付</button>
 </view>

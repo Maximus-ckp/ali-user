@@ -4,7 +4,7 @@ const app = getApp();
 
 Page({
   data: {
-    isSign: 1, // 1 已报名 0 未报名
+    isSign: 0, // 1 已报名 0 未报名
     posterUrl: "",
     activityId: "",
     activityName: "",
@@ -220,7 +220,8 @@ Page({
           buttonText: "好的",
           success: () => {
             this.setData({
-              showPopup: false
+              showPopup: false,
+              isSign:1
             });
           }
         });
@@ -288,5 +289,11 @@ Page({
     setTimeout(() => {
       this.poster.draw();
     }, 60);
+  },
+  scrollToTop(){
+    my.pageScrollTo({
+      scrollTop: 1,
+      duration:300
+    })
   }
 });
