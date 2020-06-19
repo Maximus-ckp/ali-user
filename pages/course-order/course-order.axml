@@ -10,7 +10,7 @@
   <view class="am-list-item">
     <view class="am-list-content">合计支付</view>
     <view class="am-list-extra">
-      <view class="total">{{effectiveTime}}</view>
+      <view class="total">{{discountPrice.toFixed(2)}}</view>
     </view>
   </view>
 

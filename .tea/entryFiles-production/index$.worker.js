@@ -40,12 +40,12 @@ require('../../pages/activity-detail/components/SharePoster/SharePoster?hash=05d
 require('../../pages/my-course/components/CourseCard/CourseCard?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
 require('../../pages/my-activity/components/ActivityCard/ActivityCard?hash=05d2a9730dd6009bf9446182f9c985f40f8c0f43');
 require('../../pages/index/index?hash=12e2c67484c4051c8902f0118c1a9d236658ef78');
-require('../../pages/activity-detail/activity-detail?hash=9007f12f04fe659158939ba74dfb5ccc39e3140e');
-require('../../pages/my-course/my-course?hash=648d762e57bc50e936f23cfd1f14486ef6e6c538');
-require('../../pages/my-activity/my-activity?hash=5748add3881b16e8e784d386e16e57bb2afb405f');
-require('../../pages/course-detail/course-detail?hash=3e2e5e2d473d03821badb5452a72c12422f436f6');
-require('../../pages/course-order/course-order?hash=3e2e5e2d473d03821badb5452a72c12422f436f6');
-require('../../pages/my/my?hash=3e2e5e2d473d03821badb5452a72c12422f436f6');
+require('../../pages/activity-detail/activity-detail?hash=3c6bfa607dbd76deff3e5a7f97814c59181b54de');
+require('../../pages/my-course/my-course?hash=1f3575effc20374168bc03add038adeed8af89f9');
+require('../../pages/my-activity/my-activity?hash=f399ed934d59d42f48b87d68ce373ebe17c6f927');
+require('../../pages/course-detail/course-detail?hash=23c5b4da2717aaa7a0c17ae8cb99dc23ed61d274');
+require('../../pages/course-order/course-order?hash=23c5b4da2717aaa7a0c17ae8cb99dc23ed61d274');
+require('../../pages/my/my?hash=23c5b4da2717aaa7a0c17ae8cb99dc23ed61d274');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();
 }
