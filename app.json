@@ -2,19 +2,19 @@
   "pages": [
 
     "pages/index/index",
-
     "pages/activity-detail/activity-detail",
-
     "pages/my-course/my-course",
     "pages/my-activity/my-activity",
     "pages/course-detail/course-detail",
     "pages/course-order/course-order",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/auth-success/auth-success"
+
   ],
   "window": {
     "defaultTitle": "活动平台",
-    "titleBarColor":"#fff",
-    "backgroundColor":"f8f8f8"
+    "titleBarColor": "#fff",
+    "backgroundColor": "f8f8f8"
   },
   "tabBar": {
     "textColor": "#818A92",

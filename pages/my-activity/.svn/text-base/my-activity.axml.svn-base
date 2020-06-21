@@ -1,4 +1,5 @@
-<view class="schedule-container">
+<ant-skeleton a:if="{{isLoading}}"/>
+<view a:else class="schedule-container">
   <scroll-view scroll-y="{{true}}" onScrollToLower="loadMore" class="schedule-scroll">
     <block a:for="{{activityList}}">
       <activity-card activityPoster="{{item.coverImage}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime || '不限'}}" activityAddress="{{item.address}}" activityId="{{item.id}}"></activity-card>

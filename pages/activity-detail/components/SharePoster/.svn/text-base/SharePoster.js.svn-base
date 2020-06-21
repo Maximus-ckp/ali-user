@@ -16,12 +16,10 @@ Component({
     activityQR: "/assets/QR.png"
   },
   didMount() {
-    console.log("didMount" + Date.now());
     this.$page.poster = this;
     this.ctx = my.createCanvasContext("canvas");
   },
   didUpdate() {
-    // console.log(this.props.timeStamp)
     console.log("didUpdate" + Date.now());
     // this.draw()
   },
@@ -40,8 +38,8 @@ Component({
         this.setData({ isSaving: false, btnTxt: "下载海报到相册" });
       }, 2000);
     },
-    // 556 650
-    draw() {
+    // 按字段画
+    draw1() {
       console.log(this.props.coverUrl);
       const { ctx } = this;
       // 橘黄背景
@@ -93,6 +91,33 @@ Component({
       ctx.fillText("免费报名参加", 126, 1250);
       // 二维码
       ctx.drawImage(this.props.activityQR, 800, 1120, 200, 170);
+      ctx.draw();
+      this.setData({ isSaving: true, btnTxt: "生成海报中" });
+      setTimeout(() => {
+        ctx
+          .toDataURL({
+            x: 0,
+            y: 0,
+            width: 1112,
+            height: 1300,
+            quality: 0.1,
+            fillType: "png"
+          })
+          .then(res => {
+            this.setData({
+              posterUrl: res,
+              isSaving: false,
+              btnTxt: "下载海报到相册"
+            });
+          });
+      }, 300);
+    },
+    // 按整张图画
+    draw() {
+      const { ctx } = this;
+     
+      // 海报图片
+      ctx.drawImage("/assets/poster-02.png", 0, 0, 1112, 1300);
       ctx.draw();
       this.setData({ isSaving: true, btnTxt: "生成海报中" });
       setTimeout(() => {

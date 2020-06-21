@@ -39,18 +39,18 @@ let saveStoreOrder = BASE_URL + "/api/order/5000/v1/saveStoreOrder"
 
 const COMMON_PARAMS = {
   lang: 'CN',
-      latitude: 0,
-      longitude: 0,
-      mobileInfo: {
-        did: 'testdid',
-        emulatordid: 'emulatordid',
-        imei: 'testimei',
-        platform: 'ios',
-        smDid: 'testsmDid',
-        src: 'testsrc'
-      },
-      ver: '1.0'
-      
+  latitude: 0,
+  longitude: 0,
+  mobileInfo: {
+    did: 'testdid',
+    emulatordid: 'emulatordid',
+    imei: 'testimei',
+    platform: 'ios',
+    smDid: 'testsmDid',
+    src: 'testsrc'
+  },
+  ver: '1.0'
+
 }
 
 export default {

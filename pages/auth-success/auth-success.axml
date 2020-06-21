@@ -1,0 +1,13 @@
+<view class="auth-success">
+  <view class="top">
+    <view class="logo">
+      <image class="logo" mode="scaleToFill" src="/assets/logo.png"/>
+    </view>
+  </view>
+  <view class="p1">支付宝小程序授权成功</view>
+  <view class="bottom">
+    <view class="url">http://www.tuokelianmeng.com</view>
+    <view class="copy" onTap="copy">复制链接</view>
+    <view class="note">请使用电脑端浏览器打开链接完成配置</view>
+  </view>
+</view>

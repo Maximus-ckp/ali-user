@@ -1,12 +1,11 @@
 import swiperConfig from "/config/swiper-config";
 import parse from "mini-html-parser2";
-// 获取全局 app 实例
 const app = getApp();
-console.log(app);
 
 Page({
   data: {
-    isSign: 1, // 1 已报名 0 未报名
+    isLoading: true,
+    isSign: 0, // 1 已报名 0 未报名
     posterUrl: "",
     activityId: "",
     activityName: "",
@@ -72,6 +71,7 @@ Page({
           isSign
         } = data.data;
         this.setData({
+          isLoading: false,
           activityName,
           activityTime,
           address,
@@ -87,8 +87,11 @@ Page({
   },
   str2node(htmlTxt) {
     // htmlTxt = htmlTxt.replace(/<br>/gi, "aaa");
-    console.log(htmlTxt);
-    htmlTxt = htmlTxt.replace(/<img/g, "<img style='max-width:100%;border-radius:6px;'");
+    // console.log(htmlTxt);
+    htmlTxt = htmlTxt.replace(
+      /<img/g,
+      "<img style='max-width:100%;border-radius:6px;'"
+    );
     parse(htmlTxt, (err, nodes) => {
       if (!err) {
         this.setData({
@@ -101,12 +104,20 @@ Page({
     if (this.data.isSign) {
       return;
     }
-    this.setData({
-      showPopup: true
+    let duration = 200;
+    my.pageScrollTo({
+      scrollTop: 1,
+      duration
     });
+    setTimeout(() => {
+      this.setData({
+        showPopup: true
+      });
+    }, duration + 100);
+
     // this.data.showPopup = true;
   },
-  share() {
+  share1() {
     // my.showSharePanel();
     this.showSharePanel();
     // let { url } = this.data;
@@ -121,12 +132,15 @@ Page({
     //   }
     // });
   },
-
+  share() {
+    my.showSharePanel();
+  },
   onShareAppMessage() {
     return {
-      title: "分享 View 组件",
-      desc: "View 组件很通用"
-      // path: 'page/component/view/view',
+      title: "好店分享",
+      desc: "店家发起了一个有趣的活动推荐给您！",
+      path: "pages/activity-detail/activity-detail?activityId="+this.data.activityId,
+      bgImgUrl:"/assets/poster-02.png"
     };
   },
   onPopupClose() {
@@ -157,7 +171,12 @@ Page({
       result.msg = "请正确填写您的手机号";
       return result;
     }
-    if (!this.data.bbAge || !/^\d{1,2}$/.test(this.data.bbAge)) {
+    // if (!this.data.bbAge || !/^\d{1,2}$/.test(this.data.bbAge)) {
+    //   result.validated = false;
+    //   result.msg = "请正确填写宝宝年龄";
+    //   return result;
+    // }
+    if (!this.data.bbAge) {
       result.validated = false;
       result.msg = "请正确填写宝宝年龄";
       return result;
@@ -189,6 +208,10 @@ Page({
     });
   },
   saveActivitySign() {
+    my.showLoading({
+      content: "加载中...",
+      delay: "500"
+    });
     let params = {
       ...app.api.COMMON_PARAMS,
       // TODO
@@ -203,6 +226,7 @@ Page({
       method: "POST",
       data: { ...params },
       success: ({ data }) => {
+        my.hideLoading();
         console.log("saveActivitySign");
         console.log(data);
         my.alert({
@@ -211,12 +235,13 @@ Page({
           buttonText: "好的",
           success: () => {
             this.setData({
-              showPopup: false
+              showPopup: false,
+              isSign: 1
             });
           }
         });
       },
-      fail: function (res) {
+      fail: function(res) {
         my.alert({
           title: "提示",
           content: "报名失败，请重试！",
@@ -279,5 +304,15 @@ Page({
     setTimeout(() => {
       this.poster.draw();
     }, 60);
+  },
+  scrollToTop() {
+    // my.pageScrollTo({
+    //   scrollTop: 1,
+    //   duration:300
+    // })
+  },
+  aaa() {
+    console.log(1111);
+    my.alert({ title: "confirm" });
   }
 });

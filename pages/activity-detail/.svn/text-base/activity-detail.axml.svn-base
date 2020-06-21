@@ -1,4 +1,5 @@
-<view class="activity-box">
+<ant-skeleton a:if="{{isLoading}}"/>
+<view a:else class="activity-box">
   <!--<image class="activity-poster" src="{{coverImage}}"></image> -->
   <!-- 轮播图 -->
   <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
@@ -25,7 +26,11 @@
       <!--<image mode="scaleToFill" src="{{img}}"/> -->
     活动详情
     </view>
-    <rich-text class="rich-text" nodes="{{nodes}}"></rich-text>
+    <!--<rich-text class="rich-text" nodes="{{nodes}}"></rich-text> -->
+    <view class="rich-text-fake-container">
+      <image class="rich-text-fake" mode="widthFix" src="{{richText}}"/>
+      <!--<image class="rich-text-fake" mode="widthFix" src="{{richText}}"/> -->
+    </view>
   </view>
   <!--<canvas id="canvas" width="610" height="610" class="canvas"/> -->
   <!-- 底部按钮条 -->
@@ -35,21 +40,24 @@
       <view class="share-txt">分享</view>
     </view>
     <view class="bottom-right" onTap="signup">
-
       <button class="bottom-right-btn {{isSign === 1 ? 'gray':''}}">{{isSign ? '已报名': '立即报名' }}</button>
     </view>
   </view>
-  <popup show="{{showPopup}}" position="bottom" onClose="onPopupClose">
-    <view class="popup-box">
-      <view class="form-notice">
+  <view class="modal" a:if={{showPopup}}></view>
+  <!--<view class="modal" a:if={{showPopup}}> -->
+  <!--<popup show="{{showPopup}}" position="bottom" onClose="onPopupClose"> -->
+  <view class="popup-box" a:if={{showPopup}}>
+    <view class="form-notice">
       请填入正确信息以便联系到您~
-      </view>
-      <image mode="scaleToFill" class="btn-close" onTap="onPopupClose" src="/assets/btn-close.png"/>
-      <input placeholder="请输入您的手机号" fixed="true" type="text" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
-      <input placeholder="请输入宝宝年龄" fixed="true" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
-      <input placeholder="请输入宝宝姓名" fixed="true" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel"/>
-      <button class="submit-btn" onTap="submit">确定报名</button>
     </view>
-  </popup>
+    <image mode="scaleToFill" class="btn-close" onTap="onPopupClose" src="/assets/btn-close.png"/>
+    <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="11" placeholder="请输入您的手机号" fixed="true" type="number" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
+    <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="10" placeholder="请输入宝宝年龄" fixed="true" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
+    <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="10" placeholder="请输入宝宝姓名" fixed="true" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel" onConfirm="aaa"/>
+    <button class="submit-btn" onTap="submit">确定报名</button>
+  </view>
+  <view class="polyfill-bottom" a:if="{{showPopup}}"></view>
+  <!--</popup> -->
+  <!--</view> -->
 </view>
 <share-poster ref="posterRef" timeStamp="{{Date.now()}}" showSharePoster="{{showSharePoster}}" coverUrl="{{posterUrl}}" closePoster="closeSharePoster" activityAddress="{{address}}" activityName="{{activityName}}"></share-poster>

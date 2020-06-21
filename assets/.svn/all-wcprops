@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 44
-/svn/toker/!svn/ver/33/front/ali-user/assets
+/svn/toker/!svn/ver/50/front/ali-user/assets
 END
 tab-home.png
 K 25
@@ -50,6 +50,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 64
 /svn/toker/!svn/ver/40/front/ali-user/assets/tab-home-active.png
+END
+rich-text-2.png
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/toker/!svn/ver/50/front/ali-user/assets/rich-text-2.png
 END
 btn-close2.png
 K 25
@@ -110,4 +116,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 55
 /svn/toker/!svn/ver/40/front/ali-user/assets/tab-my.png
+END
+poster-02.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/toker/!svn/ver/50/front/ali-user/assets/poster-02.png
 END

@@ -1,14 +1,29 @@
 page {
   background: #f7f7f7;
 }
-view{
+
+view {
   box-sizing: border-box;
 }
-rich-text{
-  min-height:20vh;
-  background:#fff;
-}
-.inline{
-  display: inline;
 
+rich-text {
+  min-height: 20vh;
+  background: #fff;
+}
+
+.inline {
+  display: inline;
+}
+
+.rich-text-fake-container {
+  width: 100%;
+}
+
+.rich-text-fake {
+  width:100%;
+  margin: 0 auto;
+  color: #4E5056;
+  font-size: 28rpx;
+  line-height: 38rpx;
+  min-height: 20vh;
 }

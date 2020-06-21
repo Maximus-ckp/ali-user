@@ -1,4 +1,5 @@
-<view class="course-container">
+<ant-skeleton a:if="{{isLoading}}"/>
+<view a:else class="course-container">
   <!-- 轮播 -->
   <swiper style="height:150px" class="banner-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
     <swiper-item a:for="{{swiperList}}" key="swiper-item-{{index}}">
@@ -26,14 +27,14 @@
     <view class="channel-title">
     课程详情
     </view>
-    <rich-text class="rich-text" nodes="{{nodes}}"></rich-text>
+    <!--<rich-text class="rich-text" nodes="{{nodes}}"></rich-text> -->
+    <view class="rich-text-fake-container">
+      <image class="rich-text-fake" mode="widthFix" src="{{richText}}"/>
+    </view>
   </view>
   <!-- 转换节点demo -->
-  <!-- <view>
-    <textarea onBlur="bindTextAreaBlur" auto-height placeholder="Please input something" onInput="bindKeyInput" />
-    {{inputValue}}
-    <button type="primary" onTap="str2node">input转化为node</button>
-  </view> -->
+  <!--<view><textarea onBlur="bindTextAreaBlur" auto-height placeholder="Please input something" onInput="bindKeyInput" />
+    {{inputValue}}<button type="primary" onTap="str2node">input转化为node</button></view> -->
   <view class="bottom-bar">
     <view class="bottom-left">
       <view class="order-price">

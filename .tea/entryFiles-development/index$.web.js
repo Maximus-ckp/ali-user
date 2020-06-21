@@ -20,3 +20,4 @@ require('../../pages/my-activity/my-activity?hash=f399ed934d59d42f48b87d68ce373e
 require('../../pages/course-detail/course-detail?hash=23c5b4da2717aaa7a0c17ae8cb99dc23ed61d274');
 require('../../pages/course-order/course-order?hash=23c5b4da2717aaa7a0c17ae8cb99dc23ed61d274');
 require('../../pages/my/my?hash=23c5b4da2717aaa7a0c17ae8cb99dc23ed61d274');
+require('../../pages/auth-success/auth-success?hash=fea1de5c880ec48e28eae7ad8d363834ba150e55');

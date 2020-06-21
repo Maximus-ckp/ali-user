@@ -3,6 +3,7 @@
   "defaultTitle": "我的",
   "backgroundColor": "#ffffff",
   "usingComponents": {
+    "ant-skeleton":"ant-skeleton/components/skeleton/skeleton",
     "list": "mini-antui/es/list/index",
     "list-item": "mini-antui/es/list/list-item/index"
   }

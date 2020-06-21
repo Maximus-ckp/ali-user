@@ -1,4 +1,5 @@
-<view class="schedule-container">
+<ant-skeleton a:if="{{isLoading}}"/>
+<view class="schedule-container" a:else>
   <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
     <image mode="scaleToFill" src="/assets/index-background.png" class="head-bg"/>
     <!-- 店铺信息 -->

@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "教培门店小程序",
+  "backgroundColor": "#ffffff",
+  "titleBarColor": "#fff",
+  "usingComponents": {
+    "ant-skeleton": "ant-skeleton/components/skeleton/skeleton"
+  }
+}
