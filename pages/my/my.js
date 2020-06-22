@@ -48,6 +48,25 @@ Page({
     // this.getPhone();
     //this.testRequest();
   },
+  onGetAuthorize(res) {
+    let that = this;
+    my.getOpenUserInfo({
+      fail: res => {},
+      success: res => {
+        let userInfo = JSON.parse(res.response).response; // 以下方的报文格式解析两层 response
+        console.log("获取用户授权");
+        console.log(userInfo);
+        let { avatar, nickName } = userInfo;
+        console.log(avatar, nickName);
+        app.userInfo.avatar = avatar;
+        app.userInfo.nickName = nickName;
+        that.setData({
+          avatar:app.userInfo.avatar,
+          nickName:app.userInfo.nickName
+        });
+      }
+    });
+  },
   getPhone() {
     my.getPhoneNumber({
       success: res => {
@@ -87,10 +106,10 @@ Page({
   },
   async initData() {
     var that = this;
-    if(!app.userInfo.nickName){
+    if (!app.userInfo.nickName) {
       my.showLoading({
-        content: '获取用户信息...',
-        delay: '300',
+        content: "获取用户信息...",
+        delay: "300"
       });
       try {
         that.getUserInfo();
@@ -110,6 +129,7 @@ Page({
     }
   },
   async getUserInfo() {
+    console.log("获取用户信息");
     await app.getUserInfo().then(
       user => {
         my.hideLoading();

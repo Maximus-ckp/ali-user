@@ -10,6 +10,7 @@
     "pages/my/my",
     "pages/auth-success/auth-success"
 
+
   ],
   "window": {
     "defaultTitle": "活动平台",
