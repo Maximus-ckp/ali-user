@@ -32,7 +32,9 @@ Page({
   findCustomerCourseList(orderType = 0) {
     let params = {
       ...app.api.COMMON_PARAMS,
-      customerId: 2,
+      // 变为动态
+      // customerId: 2,
+      customerId: app.userInfo.openId,
       orderBy: "string",
       // orderStatus: 3,
       pageNo: 1,
