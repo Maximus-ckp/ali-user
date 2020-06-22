@@ -32,7 +32,7 @@ Page({
     let params = {
       ...app.api.COMMON_PARAMS,
       authAppId: app.globalData.authAppId,
-      storeId: app.globalData.storeId 
+      storeId: app.globalData.storeId
     };
     my.request({
       url: app.api.getStoreInfo,
@@ -40,14 +40,14 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【getStoreInfo】请求结果：", data);
-<<<<<<< .mine
         if (data.data) {
           let {
             address,
             businessTime,
             name,
             storeMobile,
-            swiperList
+            swiperList,
+            id
           } = data.data;
           this.setData({
             shopName: name,
@@ -55,29 +55,14 @@ Page({
             shopAddress: address,
             shopTel: storeMobile,
             swiperList,
-            isLoading: false
           });
+          app.globalData.storeId = id;
         }
-=======
-        if(data.data){
-          let {
-            address,
-            businessTime,
-            name,
-            storeMobile,
-            swiperList
-          } = data.data;
-          this.setData({
-            shopName: name,
-            businessHour: businessTime,
-            shopAddress: address,
-            shopTel: storeMobile,
-            swiperList,
-            isLoading:false
-          });
-          app.globalData.storeId = data.data.id;
-        }
->>>>>>> .r57
+      },
+      complete: () => {
+        this.setData({
+          isLoading: false
+        });
       }
     });
   },
@@ -93,7 +78,7 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【findCourseList】请求结果：", data);
-        if(data.data){
+        if (data.data) {
           this.setData({
             courseList: data.data
           });
@@ -118,7 +103,7 @@ Page({
       success: ({ data }) => {
         my.hideLoading();
         console.log("【findActivityList】请求结果：", data);
-        if(data.data){
+        if (data.data) {
           this.setData({
             activityList: data.data
           });

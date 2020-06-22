@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/svn/toker/!svn/ver/50/front/ali-user
+/svn/toker/!svn/ver/57/front/ali-user
 END
 package.json
 K 25
@@ -37,5 +37,5 @@ app.js
 K 25
 svn:wc:ra_dav:version-url
 V 44
-/svn/toker/!svn/ver/42/front/ali-user/app.js
+/svn/toker/!svn/ver/57/front/ali-user/app.js
 END
