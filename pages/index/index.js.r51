@@ -31,8 +31,7 @@ Page({
   getStoreInfo() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      authAppId: app.globalData.authAppId,
-      storeId: app.globalData.storeId 
+      storeId: 2
     };
     my.request({
       url: app.api.getStoreInfo,
@@ -40,32 +39,28 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【getStoreInfo】请求结果：", data);
-        if(data.data){
-          let {
-            address,
-            businessTime,
-            name,
-            storeMobile,
-            swiperList
-          } = data.data;
-          this.setData({
-            shopName: name,
-            businessHour: businessTime,
-            shopAddress: address,
-            shopTel: storeMobile,
-            swiperList,
-            isLoading:false
-          });
-          app.globalData.storeId = data.data.id;
-        }
+        let {
+          address,
+          businessTime,
+          name,
+          storeMobile,
+          swiperList
+        } = data.data;
+        this.setData({
+          shopName: name,
+          businessHour: businessTime,
+          shopAddress: address,
+          shopTel: storeMobile,
+          swiperList,
+          isLoading:false
+        });
       }
     });
   },
   findCourseList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      authAppId: app.globalData.authAppId,
-      storeId: app.globalData.storeId
+      storeId: 2
     };
     my.request({
       url: app.api.findCourseList,
@@ -73,11 +68,9 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【findCourseList】请求结果：", data);
-        if(data.data){
-          this.setData({
-            courseList: data.data
-          });
-        }
+        this.setData({
+          courseList: data.data
+        });
       }
     });
   },
@@ -88,8 +81,7 @@ Page({
     });
     let params = {
       ...app.api.COMMON_PARAMS,
-      authAppId: app.globalData.authAppId,
-      storeId: app.globalData.storeId
+      storeId: 2
     };
     my.request({
       url: app.api.findActivityList,
@@ -98,11 +90,9 @@ Page({
       success: ({ data }) => {
         my.hideLoading();
         console.log("【findActivityList】请求结果：", data);
-        if(data.data){
-          this.setData({
-            activityList: data.data
-          });
-        }
+        this.setData({
+          activityList: data.data
+        });
       }
     });
   },

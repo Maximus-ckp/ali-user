@@ -6,7 +6,7 @@ const app = getApp();
 const mockTotal = 60;
 Page({
   data: {
-    isLoading:true,
+    isLoading: true,
     shopName: "",
     businessHour: "",
     shopAddress: "",
@@ -31,7 +31,8 @@ Page({
   getStoreInfo() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 2
+      authAppId: app.globalData.authAppId,
+      storeId: app.globalData.storeId 
     };
     my.request({
       url: app.api.getStoreInfo,
@@ -39,28 +40,52 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【getStoreInfo】请求结果：", data);
-        let {
-          address,
-          businessTime,
-          name,
-          storeMobile,
-          swiperList
-        } = data.data;
-        this.setData({
-          shopName: name,
-          businessHour: businessTime,
-          shopAddress: address,
-          shopTel: storeMobile,
-          swiperList,
-          isLoading:false
-        });
+<<<<<<< .mine
+        if (data.data) {
+          let {
+            address,
+            businessTime,
+            name,
+            storeMobile,
+            swiperList
+          } = data.data;
+          this.setData({
+            shopName: name,
+            businessHour: businessTime,
+            shopAddress: address,
+            shopTel: storeMobile,
+            swiperList,
+            isLoading: false
+          });
+        }
+=======
+        if(data.data){
+          let {
+            address,
+            businessTime,
+            name,
+            storeMobile,
+            swiperList
+          } = data.data;
+          this.setData({
+            shopName: name,
+            businessHour: businessTime,
+            shopAddress: address,
+            shopTel: storeMobile,
+            swiperList,
+            isLoading:false
+          });
+          app.globalData.storeId = data.data.id;
+        }
+>>>>>>> .r57
       }
     });
   },
   findCourseList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 2
+      authAppId: app.globalData.authAppId,
+      storeId: app.globalData.storeId
     };
     my.request({
       url: app.api.findCourseList,
@@ -68,9 +93,11 @@ Page({
       data: { ...params },
       success: ({ data }) => {
         console.log("【findCourseList】请求结果：", data);
-        this.setData({
-          courseList: data.data
-        });
+        if(data.data){
+          this.setData({
+            courseList: data.data
+          });
+        }
       }
     });
   },
@@ -81,7 +108,8 @@ Page({
     });
     let params = {
       ...app.api.COMMON_PARAMS,
-      storeId: 2
+      authAppId: app.globalData.authAppId,
+      storeId: app.globalData.storeId
     };
     my.request({
       url: app.api.findActivityList,
@@ -90,9 +118,11 @@ Page({
       success: ({ data }) => {
         my.hideLoading();
         console.log("【findActivityList】请求结果：", data);
-        this.setData({
-          activityList: data.data
-        });
+        if(data.data){
+          this.setData({
+            activityList: data.data
+          });
+        }
       }
     });
   },
@@ -142,12 +172,12 @@ Page({
       // 模拟请求拿到数据进行更新data
       // 暂时下拉不拼接假数据
       setTimeout(() => {
-      //   let data = this.data.activityList;
-      //   for (let i = 0; i < 3; i++) {
-      //     // let newObj = { title:'下拉家在', remarksa: `我是第${page}页` };
-      //     let newObj = { ...data[i] };
-      //     list.push(newObj);
-      //   }
+        //   let data = this.data.activityList;
+        //   for (let i = 0; i < 3; i++) {
+        //     // let newObj = { title:'下拉家在', remarksa: `我是第${page}页` };
+        //     let newObj = { ...data[i] };
+        //     list.push(newObj);
+        //   }
         this.setData({
           // activityList: list,
           show: false

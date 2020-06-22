@@ -11,6 +11,13 @@ const BASE_URL = "https://toker.dmivip.top/";
 
 // 1000 小程序应用注册接口
 let registerApplication = BASE_URL + "/api/application/security/1000/v1/registerApplication"
+// 用户登录接口
+let customerLogin = BASE_URL + "/api/customer/v1/login"
+
+// 用户登录接口
+let getCustomerMobile = BASE_URL + "/api/customer/1003/v1/getCustomerMobile"
+// 保存用户信息接口
+let updateStoreCustomer = BASE_URL + "/api/customer/1004/v1/updateStoreCustomer"
 // 1001 获取用户报名活动列表接口
 let findCustomerActivityList = BASE_URL + "/api/customer/1001/v1/findCustomerActivityList"
 // 1002 获取用户报名活动列表接口
@@ -55,6 +62,9 @@ const COMMON_PARAMS = {
 
 export default {
   registerApplication,
+  customerLogin,
+  getCustomerMobile,
+  updateStoreCustomer,
   findCustomerActivityList,
   findCustomerCourseList,
   getStoreInfo,

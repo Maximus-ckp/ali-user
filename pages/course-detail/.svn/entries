@@ -1,15 +1,15 @@
 10
 
 dir
-51
+57
 http://cuikunpeng@182.92.99.177:3690/svn/toker/front/ali-user/pages/course-detail
 http://cuikunpeng@182.92.99.177:3690/svn/toker
 
 
 
-2020-06-20T07:37:25.099388Z
-50
-cuikunpeng
+2020-06-21T18:46:06.237066Z
+57
+liujing
 
 
 
@@ -28,7 +28,7 @@ fb3f9911-6acc-c84e-b5ae-149c7d10e728
 
 course-detail.axml
 file
-
+51
 
 
 
@@ -62,7 +62,7 @@ cuikunpeng
 
 course-detail.acss
 file
-
+51
 
 
 
@@ -96,7 +96,7 @@ cuikunpeng
 
 course-detail.json
 file
-
+51
 
 
 
@@ -134,11 +134,11 @@ file
 
 
 
-2020-06-20T07:36:18.000000Z
-3fc610b7d0e321ce6f84f642d0708615
-2020-06-20T07:37:25.099388Z
-50
-cuikunpeng
+2020-06-22T02:07:17.000000Z
+49bbe0e39e5abcef7f288d892f537ede
+2020-06-21T18:46:06.237066Z
+57
+liujing
 
 
 
@@ -160,5 +160,5 @@ cuikunpeng
 
 
 
-2501
+3269
 

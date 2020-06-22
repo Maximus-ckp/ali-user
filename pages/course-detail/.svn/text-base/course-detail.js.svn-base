@@ -91,6 +91,34 @@ Page({
   },
   buyCourse() {
     console.log('gobuy')
+    if(app.userInfo.mobile){
+      
+    } else {
+      my.getPhoneNumber({
+          protocols:{
+            // 小程序模板所属的三方应用appId        
+          isvAppId: '2021001168631584'    
+      },
+          success: (res) => {
+            let params = {
+              openId: app.userInfo.openId,
+              encryptedData: res.response
+            };
+            my.request({
+                url: app.api.getCustomerMobile,
+                method: "POST",
+                data: { ...params },
+                success: ({ data }) => {
+                              
+                }
+            });
+          },
+          fail: (res) => {
+              console.log(res);
+              console.log('getPhoneNumber_fail');
+        },
+      });
+    }
     my.navigateTo({
       url: "/pages/course-order/course-order?courseId=" + this.data.courseId
     });

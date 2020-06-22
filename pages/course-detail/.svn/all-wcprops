@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/svn/toker/!svn/ver/50/front/ali-user/pages/course-detail
+/svn/toker/!svn/ver/57/front/ali-user/pages/course-detail
 END
 course-detail.axml
 K 25
@@ -25,5 +25,5 @@ course-detail.js
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/toker/!svn/ver/50/front/ali-user/pages/course-detail/course-detail.js
+/svn/toker/!svn/ver/57/front/ali-user/pages/course-detail/course-detail.js
 END

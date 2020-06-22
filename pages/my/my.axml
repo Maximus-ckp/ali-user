@@ -1,7 +1,7 @@
 <view class="my-container">
   <image mode="scaleToFill" class="my-background" src="/assets/my-background.png"/>
-  <image onTap="getUserInfo" class="avatar" src="{{user.avatar || '/assets/avatar.png'}}" background-size="cover"></image>
-  <view onTap="getUserInfo" class="nickname">{{user.nickName || '授权登录'}}</view>
+  <image onTap="initData" class="avatar" src="{{user.avatar || '/assets/avatar.png'}}" background-size="cover"></image>
+  <view onTap="initData" class="nickname">{{user.nickName || '授权登录'}}</view>
   <block a:for="{{navList}}">
     <list-item thumb="{{item.thumb}}" className="list-item" arrow="{{true}}" onClick="onListClick" data-index="{{index}}" data-oops="{{index}}" key="items-{{index}}" last="{{index === (items.length - 1)}}">
       {{item.name}}
