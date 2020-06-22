@@ -1,0 +1,4 @@
+<view class="skeletion-box">
+  <view class="skeleton-row first-row"></view>
+  <view class="skeleton-row" a:for="{{row}}"></view>
+</view>

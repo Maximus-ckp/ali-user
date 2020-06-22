@@ -24,7 +24,9 @@ Page({
   findCustomerActivityList() {
     let params = {
       ...app.api.COMMON_PARAMS,
-      customerId: 2,
+      // 写活参数
+      // customerId: 2,
+      customerId: app.userInfo.openId,
       orderBy: "string",
       pageNo: 1,
       pageSize: 6,
