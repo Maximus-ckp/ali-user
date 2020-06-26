@@ -1,4 +1,4 @@
-import mock from "./mock";
+// import mock from "./mock";
 import swiperConfig from "/config/swiper-config";
 const app = getApp();
 
@@ -7,12 +7,12 @@ const mockTotal = 60;
 Page({
   data: {
     isLoading: true,
-    shopName: "",
-    businessHour: "",
-    shopAddress: "",
-    shopTel: "",
-    courseList: mock.classList,
-    activityList: mock.activityList,
+    shopName: "店铺信息",
+    businessHour: "暂无数据",
+    shopAddress: "暂无数据",
+    shopTel: "暂无数据",
+    courseList: [],
+    activityList: [],
     show: false, // 是否显示加载动画
     page: 1, // 当前页数
     list: [], // 页面List数据

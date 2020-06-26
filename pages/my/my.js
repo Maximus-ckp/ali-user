@@ -3,7 +3,6 @@ const app = getApp();
 
 Page({
   data: {
-    user: {},
     avatar: app.userInfo.avatar,
     nickName: app.userInfo.nickName,
     baseUrl: "https://toker.dmivip.top/",
@@ -44,7 +43,6 @@ Page({
     ]
   },
   onShow() {
-    //this.initData();
     // this.getPhone();
     //this.testRequest();
   },
@@ -61,8 +59,23 @@ Page({
         app.userInfo.avatar = avatar;
         app.userInfo.nickName = nickName;
         that.setData({
-          avatar:app.userInfo.avatar,
-          nickName:app.userInfo.nickName
+          avatar:avatar,
+          nickName:nickName
+        });
+        let params = {
+          ...app.api.COMMON_PARAMS,
+          openId: app.userInfo.openId,
+          avatar: avatar,
+          nickName: nickName
+        };
+        my.request({
+          url: app.api.updateStoreCustomer,
+          method: "POST",
+          data: { ...params },
+          success: ({ data }) => {
+            my.hideLoading();
+            console.log("【updateStoreCustomer】请求结果：", data);
+          }
         });
       }
     });
@@ -104,67 +117,6 @@ Page({
     //   }
     // });
   },
-  async initData() {
-    var that = this;
-    if (!app.userInfo.nickName) {
-      my.showLoading({
-        content: "获取用户信息...",
-        delay: "300"
-      });
-      try {
-        that.getUserInfo();
-        // setTimeout(() => {
-        //   this.getUserInfo();
-        // }, 300);
-        // let timer = setTimeout(() => {
-        //   if (!this.data.avatar) {
-        //     this.getUserInfo();
-        //   } else {
-        //     clearTimeout(timer);
-        //   }
-        // }, 2000);
-      } catch (e) {
-        console.log("mySchedulde执行异常:", e);
-      }
-    }
-  },
-  async getUserInfo() {
-    console.log("获取用户信息");
-    await app.getUserInfo().then(
-      user => {
-        my.hideLoading();
-        this.setData({
-          user
-        });
-        let { avatar, nickName } = user;
-        console.log(avatar, nickName);
-        this.setData({
-          avatar,
-          nickName
-        });
-        app.userInfo.avatar = avatar;
-        app.userInfo.nickName = nickName;
-        let params = {
-          ...app.api.COMMON_PARAMS,
-          openId: app.userInfo.openId,
-          avatar: avatar,
-          nickName: nickName
-        };
-        my.request({
-          url: app.api.updateStoreCustomer,
-          method: "POST",
-          data: { ...params },
-          success: ({ data }) => {
-            my.hideLoading();
-            console.log("【updateStoreCustomer】请求结果：", data);
-          }
-        });
-      },
-      () => {
-        // 获取用户信息失败
-      }
-    );
-  },
   onListClick(e) {
     let {
       target: { dataset }
@@ -174,10 +126,6 @@ Page({
     console.log(dataset);
     const { onClick } = this.data.navList[dataset.index];
     if (onClick) {
-      if (!this.data.avatar) {
-        this.getUserInfo();
-        return;
-      }
       onClick();
     }
   }

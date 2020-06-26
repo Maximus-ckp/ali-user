@@ -30,6 +30,7 @@
     <!--<rich-text class="rich-text" nodes="{{nodes}}"></rich-text> -->
     <view class="rich-text-fake-container">
       <image class="rich-text-fake" mode="widthFix" src="{{richText}}"/>
+      <!--<image class="rich-text-fake" mode="widthFix" src="{{richText}}"/> -->
     </view>
   </view>
   <!-- 转换节点demo -->
@@ -44,9 +45,15 @@
         (每人限购一份)
       </view>
     </view>
-    <view a:if="{{orderStatus == 3}}" class="bottom-right gray" onTap="buyCourse">已购买</view>
-    <view a:else class="bottom-right" onTap="buyCourse">
-      {{'立即购买'}}
+    <view a:if="{{orderStatus == 3}}" class="bottom-right gray">已购买</view>
+    <view a:else class="bottom-right">
+      <button a:if="{{!mobile}}" open-type="getAuthorize"
+              onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
+          {{'立即购买'}}
+      </button>
+      <button a:else  onTap="buyCourse">
+          {{'立即购买'}}
+      </button>
     </view>
   </view>
 </view>

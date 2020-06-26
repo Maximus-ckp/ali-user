@@ -3,6 +3,7 @@
   "backgroundColor": "#ffffff",
   "usingComponents": {
     "ant-skeleton":"ant-skeleton/components/skeleton/skeleton",
-    "activity-card": "./components/ActivityCard/ActivityCard"
+    "activity-card": "./components/ActivityCard/ActivityCard",
+    "empty": "../../components/empty/empty"
   }
 }

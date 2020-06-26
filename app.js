@@ -26,7 +26,7 @@ App({
       },
     });
     my.getAuthCode({
-      scopes: 'auth_user',
+      scopes: 'auth_base',
       success: (res) => {
         // my.alert({
         //   content: res.authCode,

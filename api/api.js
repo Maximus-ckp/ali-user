@@ -7,7 +7,7 @@ https://lanhuapp.com/web/#/item/project/board?type=share_mark&pid=8b58cba8-e444-
 https://lanhuapp.com/web/#/item/project/board?fid=all&commonly=all&tid=cf38a533-a7df-4a5e-8a9f-e1413b405dab&project_id=775c4922-c005-486d-a56c-58a11fc651ef&image_id=f5f7e872-8b34-4f4b-9579-d53af5828245&from=nav
 https://lanhuapp.com/url/9YoXk-lIDhX
 */
-const BASE_URL = "https://toker.dmivip.top/";
+const BASE_URL = "https://toker.dmivip.top";
 
 // 1000 小程序应用注册接口
 let registerApplication = BASE_URL + "/api/application/security/1000/v1/registerApplication"
@@ -43,6 +43,8 @@ let findCourseList = BASE_URL + "/api/course/4001/v1/findCourseList"
 
 // 5000 提交订单接口
 let saveStoreOrder = BASE_URL + "/api/order/5000/v1/saveStoreOrder"
+let getSimpleStoreOrder = BASE_URL + "/api/order/5002/v1/getSimpleStoreOrder"
+let payStoreOrder = BASE_URL + "/api/order/5001/v1/payStoreOrder"
 
 const COMMON_PARAMS = {
   lang: 'CN',
@@ -75,5 +77,7 @@ export default {
   getCourseInfo,
   findCourseList,
   saveStoreOrder,
+  getSimpleStoreOrder,
+  payStoreOrder,
   COMMON_PARAMS
 }

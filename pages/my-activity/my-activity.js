@@ -16,7 +16,9 @@ Page({
   },
   async initData() {
     try {
-      this.findCustomerActivityList();
+      if(app.userInfo.openId){
+        this.findCustomerActivityList();
+      }
     } catch (e) {
       console.log("mySchedulde执行异常:", e);
     }
@@ -26,7 +28,7 @@ Page({
       ...app.api.COMMON_PARAMS,
       // 写活参数
       // customerId: 2,
-      customerId: app.userInfo.openId,
+      openId: app.userInfo.openId,
       orderBy: "string",
       pageNo: 1,
       pageSize: 6,

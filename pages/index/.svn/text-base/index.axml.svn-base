@@ -5,7 +5,8 @@
     <!-- 店铺信息 -->
     <shop-info shopName="{{shopName}}" businessHour="{{businessHour}}" shopAddress="{{shopAddress}}" shopTel="{{shopTel}}"></shop-info>
     <!-- 轮播图 -->
-    <swiper style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
+    <ckp-skeleton a:if="{{!swiperList || swiperList.length <1}}"/>
+    <swiper a:else style="height:150px" class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
       <swiper-item key="swiper-item-{{index}}" a:for="{{swiperList}}">
         <view class="swiper-item">
           <image class="swiper-image" mode="scaleToFill" src="{{item.pictureUrl}}"></image>
@@ -14,11 +15,13 @@
     </swiper>
     <!-- 体验课 -->
     <view class="channel-title">体验课</view>
+    <ckp-skeleton a:if="{{!courseList || courseList.length <1}}"/>
     <block a:for="{{courseList}}">
       <class-card courseId="{{item.id}} "className="{{item.courseName}}" labelList="{{item.labelList}}" imgUrl="{{item.coverImage}}" oriPrice="{{item.originalPrice}}" promotionPrice="{{item.discountPrice}}" />
     </block>
     <!-- 活动广场 -->
     <view class="channel-title">活动广场</view>
+    <ckp-skeleton a:if="{{!activityList || activityList.length <1}}"/>
     <block a:for="{{activityList}}">
       <activity-card activityId="{{item.id}}" activityPoster="{{item.coverImage}}" activityName="{{item.activityName}}" activityTime="{{item.activityTime || '不限'}}" activityAddress="{{item.address}}"></activity-card>
     </block>

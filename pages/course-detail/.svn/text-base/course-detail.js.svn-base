@@ -5,6 +5,7 @@ const app = getApp();
 Page({
   data: {
     isLoading:true,
+    mobile: app.userInfo.mobile,
     courseId:'',
     promotionPrice: '',
     oriPrice: '',
@@ -45,7 +46,7 @@ Page({
     });
     let params = {
       ...app.api.COMMON_PARAMS,
-      courseId: this.data.courseId,
+      courseId: this.data.courseId
     }
     my.request({
       url: app.api.getCourseInfo,
@@ -60,7 +61,7 @@ Page({
           courseName,
           swiperList,
           oriPrice: originalPrice,
-          promotionPrice: discountPrice, effectiveTime,
+          promotionPrice: discountPrice/100, effectiveTime,
           orderStatus,
           labelList,
           richText: detail
@@ -89,38 +90,68 @@ Page({
       }
     });
   },
-  buyCourse() {
-    console.log('gobuy')
-    if(app.userInfo.mobile){
-      
-    } else {
-      my.getPhoneNumber({
-          protocols:{
-            // 小程序模板所属的三方应用appId        
-          isvAppId: '2021001168631584'    
-      },
-          success: (res) => {
-            let params = {
-              openId: app.userInfo.openId,
-              encryptedData: res.response
-            };
-            my.request({
-                url: app.api.getCustomerMobile,
-                method: "POST",
-                data: { ...params },
-                success: ({ data }) => {
-                              
-                }
-            });
-          },
-          fail: (res) => {
-              console.log(res);
-              console.log('getPhoneNumber_fail');
+  onGetAuthorize(res) {
+    var that = this;
+    my.getPhoneNumber({
+        protocols:{
+          // 小程序模板所属的三方应用appId        
+        isvAppId: '2021001168631584'    
+    },
+        success: (res) => {
+          let params = {
+            authAppId: app.globalData.authAppId,
+            openId: app.userInfo.openId,
+            encryptedData: res.response
+          };
+          my.request({
+              url: app.api.getCustomerMobile,
+              method: "POST",
+              data: { ...params },
+              success: ({ data }) => {
+                  //that.saveStoreOrder();    
+                  this.setData({
+                    mobile: data.data
+                  });      
+                  app.userInfo.mobile = data.data;
+              }
+          });
         },
-      });
-    }
-    my.navigateTo({
-      url: "/pages/course-order/course-order?courseId=" + this.data.courseId
+        fail: (res) => {
+            console.log(res);
+            console.log('getPhoneNumber_fail');
+      },
     });
   },
+  buyCourse() {
+    console.log('gobuy')
+    this.saveStoreOrder();
+  },
+  saveStoreOrder(){
+    var that = this;
+    my.showLoading({
+      content: '加载中...',
+      delay: '500',
+    });
+    let params = {
+      ...app.api.COMMON_PARAMS,
+      courseId: that.data.courseId,
+      openId: app.userInfo.openId,
+      orderMoney: that.data.promotionPrice,
+      quantity: 1
+    }
+    my.request({
+      url: app.api.saveStoreOrder,
+      method: "POST",
+      data: { ...params },
+      success: ({ data }) => {
+        my.hideLoading();
+        console.log("【saveStoreOrder】请求结果：", data);
+        if(data.code == 0){
+          my.navigateTo({
+            url: "/pages/course-order/course-order?orderId=" + data.data.id
+          });
+        }
+      }
+    });
+  }
 });

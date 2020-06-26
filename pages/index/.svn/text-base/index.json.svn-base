@@ -6,6 +6,7 @@
     "ant-skeleton":"ant-skeleton/components/skeleton/skeleton",
     "shop-info": "./components/ShopInfo/ShopInfo",
     "activity-card": "./components/ActivityCard/ActivityCard",
-    "class-card": "./components/ClassCard/ClassCard"
+    "class-card": "./components/ClassCard/ClassCard",
+    "ckp-skeleton": "./components/ckp-skeleton/ckp-skeleton"
   }
 }

@@ -36,11 +36,15 @@
   <!-- 底部按钮条 -->
   <view class="bottom-bar">
     <view class="bottom-left" onTap="share">
-      <image mode="scaleToFill" class="share-btn" src="/assets/btn-share.png"/>
-      <view class="share-txt">分享</view>
+      <!-- <image mode="scaleToFill" class="share-btn" src="/assets/btn-share.png"/>
+      <view class="share-txt">分享</view> -->
     </view>
-    <view class="bottom-right" onTap="signup">
-      <button class="bottom-right-btn {{isSign === 1 ? 'gray':''}}">{{isSign ? '已报名': '立即报名' }}</button>
+    <view class="bottom-right">
+      <button a:if="{{!mobile}}"  class="bottom-right-btn" open-type="getAuthorize" 
+              onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
+                  {{'立即报名'}}
+      </button>
+      <button a:if="{{mobile}}" onTap="signup" class="bottom-right-btn {{isSign === 1 ? 'gray':''}}">{{isSign ? '已报名': '立即报名' }}</button>
     </view>
   </view>
   <view class="modal" a:if={{showPopup}}></view>
@@ -51,7 +55,7 @@
       请填入正确信息以便联系到您~
     </view>
     <image mode="scaleToFill" class="btn-close" onTap="onPopupClose" src="/assets/btn-close.png"/>
-    <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="11" placeholder="请输入您的手机号" fixed="true" type="number" value="{{tel}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
+    <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="11" placeholder="请输入您的手机号" fixed="true" type="number" value="{{mobile}}" clear="{{true}}" onInput="onInputTel" onClear="onClearTel"/>
     <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="10" placeholder="请输入宝宝年龄" fixed="true" type="text" value="{{bbAge}}" clear="{{true}}" onInput="onInputAge" onClear="onClearTel"/>
     <input enableNative="{{false}}" onBlur="scrollToTop" maxlength="10" placeholder="请输入宝宝姓名" fixed="true" type="text" value="{{bbName}}" clear="{{true}}" onInput="onInputName" onClear="onClearTel" onConfirm="aaa"/>
     <button class="submit-btn" onTap="submit">确定报名</button>

@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/toker/!svn/ver/40/front/ali-user/assets/tab-home.png
 END
+icon-shop.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/toker/!svn/ver/65/front/ali-user/assets/icon-shop.png
+END
 icon-calendar.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
 /svn/toker/!svn/ver/33/front/ali-user/assets/icon-calendar.png
-END
-icon-shop.png
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/svn/toker/!svn/ver/13/front/ali-user/assets/icon-shop.png
 END
 logo.png
 K 25
@@ -27,11 +27,11 @@ svn:wc:ra_dav:version-url
 V 52
 /svn/toker/!svn/ver/4/front/ali-user/assets/logo.png
 END
-tab-my-active.png
+my-background.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/toker/!svn/ver/40/front/ali-user/assets/tab-my-active.png
+/svn/toker/!svn/ver/65/front/ali-user/assets/my-background.png
 END
 badge.png
 K 25
@@ -39,11 +39,11 @@ svn:wc:ra_dav:version-url
 V 54
 /svn/toker/!svn/ver/13/front/ali-user/assets/badge.png
 END
-my-background.png
+tab-my-active.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/toker/!svn/ver/33/front/ali-user/assets/my-background.png
+/svn/toker/!svn/ver/40/front/ali-user/assets/tab-my-active.png
 END
 tab-home-active.png
 K 25
@@ -57,29 +57,29 @@ svn:wc:ra_dav:version-url
 V 60
 /svn/toker/!svn/ver/50/front/ali-user/assets/rich-text-2.png
 END
-btn-close2.png
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/svn/toker/!svn/ver/41/front/ali-user/assets/btn-close2.png
-END
 complete.png
 K 25
 svn:wc:ra_dav:version-url
 V 57
 /svn/toker/!svn/ver/33/front/ali-user/assets/complete.png
 END
+btn-close2.png
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/toker/!svn/ver/41/front/ali-user/assets/btn-close2.png
+END
 icon-tel.png
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/svn/toker/!svn/ver/13/front/ali-user/assets/icon-tel.png
+/svn/toker/!svn/ver/65/front/ali-user/assets/icon-tel.png
 END
 icon-address.png
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svn/toker/!svn/ver/13/front/ali-user/assets/icon-address.png
+/svn/toker/!svn/ver/65/front/ali-user/assets/icon-address.png
 END
 avatar.png
 K 25
@@ -103,7 +103,7 @@ index-background.png
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svn/toker/!svn/ver/13/front/ali-user/assets/index-background.png
+/svn/toker/!svn/ver/65/front/ali-user/assets/index-background.png
 END
 btn-close.png
 K 25

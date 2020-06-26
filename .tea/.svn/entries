@@ -1,15 +1,15 @@
 10
 
 dir
-57
+64
 http://cuikunpeng@182.92.99.177:3690/svn/toker/front/ali-user/.tea
 http://cuikunpeng@182.92.99.177:3690/svn/toker
 
 
 
-2020-06-21T18:46:06.237066Z
-57
-liujing
+2020-06-22T09:55:37.327895Z
+61
+cuikunpeng
 
 
 
@@ -25,9 +25,6 @@ liujing
 
 
 fb3f9911-6acc-c84e-b5ae-149c7d10e728
-
-entryFiles-development
-dir
 
 entryFiles-production
 dir

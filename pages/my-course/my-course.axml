@@ -10,12 +10,14 @@
       <block a:for="{{totalList}}">
         <course-card courseId="{{item.id}}" onTap="goToCourse" orderNo="{{item.orderNo}}" payTime="{{item.payTime}}" orderStatus="{{item.orderStatus}}" coverImage="{{item.coverImage}}" courseName="{{item.courseName}}" discountPrice="{{item.discountPrice}}" effectiveEndTime="{{item.effectiveEndTime}}" redeemCode="{{item.redeemCode}}"></course-card>
       </block>
+      <empty a:if="{{!totalList || totalList.length === 0}}"></empty>
     </view>
     <!-- 未消费课程 -->
     <view class="tab-pane" a:if="{{tabIdx === 1}}">
       <block a:for="{{unusedList}}">
         <course-card courseId="{{item.id}}" onTap="goToCourse" orderNo="{{item.orderNo}}" payTime="{{item.payTime}}" orderStatus="{{item.orderStatus}}" coverImage="{{item.coverImage}}" courseName="{{item.courseName}}" discountPrice="{{item.discountPrice}}" effectiveEndTime="{{item.effectiveEndTime}}" redeemCode="{{item.redeemCode}}"></course-card>
       </block>
+      <empty a:if="{{!unusedList || unusedList.length === 0}}"></empty>
     </view>
   </view>
 </view>

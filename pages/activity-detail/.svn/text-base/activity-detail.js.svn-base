@@ -5,6 +5,7 @@ const app = getApp();
 Page({
   data: {
     isLoading: true,
+    mobile: "",
     isSign: 0, // 1 已报名 0 未报名
     posterUrl: "",
     activityId: "",
@@ -100,49 +101,56 @@ Page({
       }
     });
   },
-  signup() {
-    if(app.userInfo.mobile){
-      if (this.data.isSign) {
-        return;
-      }
-      let duration = 200;
-      my.pageScrollTo({
-        scrollTop: 1,
-        duration
-      });
-      setTimeout(() => {
-        this.setData({
-          showPopup: true
-        });
-      }, duration + 100);
-
-      // this.data.showPopup = true;
-    } else {
-      my.getPhoneNumber({
-          protocols:{
-            // 小程序模板所属的三方应用appId        
-          isvAppId: '2021001168631584'    
-      },
-          success: (res) => {
-            let params = {
-              openId: app.userInfo.openId,
-              encryptedData: res.response
-            };
-            my.request({
-                url: app.api.getCustomerMobile,
-                method: "POST",
-                data: { ...params },
-                success: ({ data }) => {
-                              
-                }
-            });
-          },
-          fail: (res) => {
-              console.log(res);
-              console.log('getPhoneNumber_fail');
+  onGetAuthorize(res) {
+    var that = this;
+    my.getPhoneNumber({
+        protocols:{
+          // 小程序模板所属的三方应用appId        
+        isvAppId: '2021001168631584'    
+    },
+        success: (res) => {
+          let params = {
+            authAppId: app.globalData.authAppId,
+            openId: app.userInfo.openId,
+            encryptedData: res.response
+          };
+          my.request({
+              url: app.api.getCustomerMobile,
+              method: "POST",
+              data: { ...params },
+              success: ({ data }) => {
+                  //that.saveStoreOrder();    
+                  console.log('用户手机号'+data.data)
+                  console.log(data.data)
+                  that.setData({
+                    mobile: data.data
+                  });      
+                  app.userInfo.mobile = data.data;
+                  that.signup();
+              }
+          });
         },
-      });
+        fail: (res) => {
+            console.log(res);
+            console.log('getPhoneNumber_fail');
+      },
+    });
+  },
+  signup() {
+    if (this.data.isSign) {
+      return;
     }
+    let duration = 200;
+    my.pageScrollTo({
+      scrollTop: 1,
+      duration
+    });
+    setTimeout(() => {
+      this.setData({
+        showPopup: true
+      });
+    }, duration + 100);
+    this.data.showPopup = true;
   },
   share1() {
     // my.showSharePanel();
@@ -244,9 +252,10 @@ Page({
       // TODO
       activityId: this.data.activityId,
       babyAge: this.data.bbAge,
-      babyName: this.data.babyName,
-      userMobile: this.data.tel,
-      userName: "ckp"
+      babyName: this.data.bbName,
+      userMobile: this.data.mobile,
+      userName: app.userInfo.nickName,
+      openId: app.userInfo.openId
     };
     my.request({
       url: app.api.saveActivitySign,

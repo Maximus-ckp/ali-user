@@ -1,18 +1,18 @@
 <view class="order-container">
   <view class="course-main-box">
-    <image mode="scaleToFill" class="course-cover" src="{{coverImage}}"/>
+    <image mode="scaleToFill" class="course-cover" src="{{courseCoverImage}}"/>
     <view class="course-name">{{courseName}}</view>
   </view>
   <view class="am-list-item">
     <view class="am-list-content">有效期至</view>
-    <view class="am-list-extra">{{deadlineTime}}</view>
+    <view class="am-list-extra">{{effectiveEndTime}}</view>
   </view>
   <view class="am-list-item">
     <view class="am-list-content">合计支付</view>
     <view class="am-list-extra">
-      <view class="total">{{discountPrice.toFixed(2)}}</view>
+      <view class="total">{{orderMoney.toFixed(2)}}</view>
     </view>
   </view>
 
-  <button class="btn" onTap="pay">立即支付</button>
+  <button class="btn" onTap="payOrder">立即支付</button>
 </view>

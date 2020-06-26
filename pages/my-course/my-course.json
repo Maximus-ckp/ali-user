@@ -2,7 +2,8 @@
   "defaultTitle": "我的课程",
   "backgroundColor": "#ffffff",
   "usingComponents": {
-    "ant-skeleton":"ant-skeleton/components/skeleton/skeleton",
-    "course-card": "./components/CourseCard/CourseCard"
+    "ant-skeleton": "ant-skeleton/components/skeleton/skeleton",
+    "course-card": "./components/CourseCard/CourseCard",
+    "empty": "../../components/empty/empty"
   }
 }

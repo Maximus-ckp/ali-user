@@ -176,6 +176,13 @@
     text-align: center;
   }
 
+  .bottom-right button {
+    color: #fff;
+    background: #FF943E;
+    text-align: center;
+    border:none;
+  }
+
   .gray {
     background: #C4CACE;
   }

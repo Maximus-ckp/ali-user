@@ -118,7 +118,8 @@ swiper {
   height: 60rpx;
   right: 0;
   top: 20rpx;
-  background: #D8DEE5;
+   /* 暂时隐藏 */
+  /* background: #D8DEE5; */
 }
 
 .share-btn {

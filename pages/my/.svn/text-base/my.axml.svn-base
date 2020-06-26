@@ -1,7 +1,10 @@
 <view class="my-container">
   <image mode="scaleToFill" class="my-background" src="/assets/my-background.png"/>
-  <image onTap="initData" class="avatar" src="{{user.avatar || '/assets/avatar.png'}}" background-size="cover"></image>
-  <view onTap="initData" class="nickname">{{user.nickName || '授权登录'}}</view>
+  <image class="avatar" src="{{avatar || '/assets/avatar.png'}}" background-size="cover"></image>
+  <view a:if="{{avatar}}" class="nickname">{{nickName}}</view>
+  <button a:if="{{!avatar}}" class="auth-btn" type="ghost" open-type="getAuthorize" class="btn-integration" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'>
+    授权登录
+  </button>
   <block a:for="{{navList}}">
     <list-item thumb="{{item.thumb}}" className="list-item" arrow="{{true}}" onClick="onListClick" data-index="{{index}}" data-oops="{{index}}" key="items-{{index}}" last="{{index === (items.length - 1)}}">
       {{item.name}}

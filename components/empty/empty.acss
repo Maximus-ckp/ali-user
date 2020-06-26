@@ -1,0 +1,13 @@
+.no-data {
+  font-size: 26rpx;
+  color: #818A92;
+  text-align: center;
+  padding: 48rpx;
+}
+
+.no-data image {
+  width: 70rpx;
+  height: 100rpx;
+  margin: 24rpx;
+  opacity: .6;
+}
